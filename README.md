@@ -10,7 +10,7 @@ https://baubaubau.hatenablog.com/entry/2021/02/12/201803
 
 ## keycloak設定
 1. realmを「poc realm」で作成
-2. clientを「poc-client」で作成(valid redirectに`localhost:8081/*`を入れる)
+2. clientを「poc-client」で作成(valid redirectに`http://localhost:8081/*`を入れる)
 3. userを「user1」で作成
 4. roleを「user」で作成
 5. userにroleを紐付ける
