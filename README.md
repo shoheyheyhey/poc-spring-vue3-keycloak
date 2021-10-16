@@ -9,8 +9,12 @@ SPAとkeycloak連携検証用
 `docker run -p 8080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin quay.io/keycloak/keycloak:15.0.2`
 
 ## keycloak設定
-1. realmを「poc realm」で作成
-2. clientを「poc-client」で作成(valid redirectに`http://localhost:8081/*`を入れる)
-3. userを「user1」で作成
-4. roleを「user」で作成
-5. userにroleを紐付ける
+1. realmを「DocumentService」で作成
+2. clientを「documentservice」で作成
+3. userを「bob」で作成
+4. roleを「read」で作成
+5. clientにroleを紐付ける
+
+## Spring Initializrでプロジェクト作成
+
+## 
