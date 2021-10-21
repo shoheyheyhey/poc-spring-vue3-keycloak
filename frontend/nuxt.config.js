@@ -66,6 +66,16 @@ export default {
           logout:
             'http://localhost:8080/auth/realms/DocumentService/protocol/openid-connect/logout?redirect_uri=http://localhost:3000',
         },
+        token: {
+          property: 'access_token',
+          type: 'Bearer',
+          maxAge: 60 * 2 // アクセストークンのライフスパン設定
+        },
+        refreshToken: {
+          property: 'refresh_token',
+          maxAge: 60 * 3 // リフレッシュトークンのライフスパン設定
+        },
+
         responseType: 'code',
         clientId: 'account',
         scope: ['openid'],
