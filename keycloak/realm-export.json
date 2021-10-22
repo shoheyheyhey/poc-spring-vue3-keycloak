@@ -1,14 +1,14 @@
 {
   "id": "DocumentService",
   "realm": "DocumentService",
-  "notBefore": 0,
+  "notBefore": 1634878189,
   "defaultSignatureAlgorithm": "RS256",
   "revokeRefreshToken": true,
   "refreshTokenMaxReuse": 0,
-  "accessTokenLifespan": 120,
+  "accessTokenLifespan": 60,
   "accessTokenLifespanForImplicitFlow": 900,
-  "ssoSessionIdleTimeout": 180,
-  "ssoSessionMaxLifespan": 36000,
+  "ssoSessionIdleTimeout": 120,
+  "ssoSessionMaxLifespan": 120,
   "ssoSessionIdleTimeoutRememberMe": 0,
   "ssoSessionMaxLifespanRememberMe": 0,
   "offlineSessionIdleTimeout": 2592000,
@@ -1519,7 +1519,7 @@
     ],
     "org.keycloak.userprofile.UserProfileProvider": [
       {
-        "id": "ce786b8f-4594-4b36-9295-a9eec4369cf5",
+        "id": "a981ffdc-200a-4404-9a21-8498b1f81e72",
         "providerId": "declarative-user-profile",
         "subComponents": {},
         "config": {}
