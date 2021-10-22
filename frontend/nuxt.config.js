@@ -63,17 +63,20 @@ export default {
             'http://localhost:8080/auth/realms/DocumentService/protocol/openid-connect/auth',
           token:
             'http://localhost:8080/auth/realms/DocumentService/protocol/openid-connect/token',
+          refreshToken:
+            'http://localhost:8080/auth/realms/DocumentService/protocol/openid-connect/token',
           logout:
             'http://localhost:8080/auth/realms/DocumentService/protocol/openid-connect/logout?redirect_uri=http://localhost:3000',
         },
         token: {
           property: 'access_token',
           type: 'Bearer',
-          maxAge: 60 * 2 // アクセストークンのライフスパン設定
+          maxAge: 60 * 1 // アクセストークンのライフスパン設定
         },
         refreshToken: {
           property: 'refresh_token',
-          maxAge: 60 * 3 // リフレッシュトークンのライフスパン設定
+          data: 'refresh_token',
+          maxAge: 60 * 2 // リフレッシュトークンのライフスパン設定
         },
 
         responseType: 'code',
