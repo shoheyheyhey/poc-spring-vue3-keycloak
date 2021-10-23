@@ -80,7 +80,7 @@ export default {
         },
 
         responseType: 'code',
-        clientId: 'account',
+        clientId: 'frontend',
         scope: ['openid'],
         codeChallengeMethod: 'S256'
       },
