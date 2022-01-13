@@ -1,4 +1,4 @@
-# poc-spring-nuxt-keycloak
+# poc-spring-vue3-keycloak
 SPAとkeycloak連携検証用
 
 # 環境構築(Mac)
