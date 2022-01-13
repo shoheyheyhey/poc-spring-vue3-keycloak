@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  keycloak:
+    image: jboss/keycloak:15.0.2
+    ports:
+      - '8180:8080'
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_IMPORT: /tmp/sample-realm.json
+    volumes:
+      - "./docker/keycloak/cli/access-log.cli:/opt/jboss/startup-scripts/access-log.cli:ro"
+      - "./docker/keycloak/realm/sample-realm.json:/tmp/sample-realm.json:ro"
+    restart: always

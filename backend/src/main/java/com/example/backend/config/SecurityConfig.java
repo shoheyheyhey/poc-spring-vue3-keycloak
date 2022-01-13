@@ -12,14 +12,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    // @Override
-    // protected void configure(HttpSecurity http) throws Exception {
-    //     http.oauth2ResourceServer().jwt();
-    //     http.authorizeRequests()
-    //             .mvcMatchers("document/**").authenticated()
-    //             .anyRequest().permitAll();
-    // }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests(s -> s.mvcMatchers("/health") ///health エンドポイントのみ保護を除外す
