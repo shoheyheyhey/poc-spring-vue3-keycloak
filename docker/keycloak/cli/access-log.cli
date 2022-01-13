@@ -1,0 +1,7 @@
+embed-server --server-config=standalone-ha.xml --std-out=echo
+batch
+
+/subsystem=undertow/server=default-server/host=default-host/setting=access-log:add
+
+run-batch
+stop-embedded-server
