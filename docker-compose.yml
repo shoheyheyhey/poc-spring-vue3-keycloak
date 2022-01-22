@@ -12,3 +12,16 @@ services:
       - "./docker/keycloak/cli/access-log.cli:/opt/jboss/startup-scripts/access-log.cli:ro"
       - "./docker/keycloak/realm/sample-realm.json:/tmp/sample-realm.json:ro"
     restart: always
+
+  postgresql:
+    image: postgres:14.1
+    ports:
+      - 5432:5432
+    volumes:
+      - ./docker/postgres/init:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: sampledb
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
+    restart: always

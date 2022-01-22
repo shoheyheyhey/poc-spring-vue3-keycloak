@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/docker/docker.iml" filepath="$PROJECT_DIR$/docker/docker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flyway/flyway.iml" filepath="$PROJECT_DIR$/flyway/flyway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jooq/jooq.iml" filepath="$PROJECT_DIR$/jooq/jooq.iml" />
+    </modules>
+  </component>
+</project>

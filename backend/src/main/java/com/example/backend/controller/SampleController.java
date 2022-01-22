@@ -13,7 +13,13 @@ public class SampleController {
     }
 
     @GetMapping("/hello")
-    public ResponseEntity<String> hello () {
+    public ResponseEntity<String> hello() {
         return ResponseEntity.ok("hello");
     }
+
+    @GetMapping("users")
+    public ResponseEntity<String> getUsers() {
+        return ResponseEntity.ok("hello");
+    }
+
 }
