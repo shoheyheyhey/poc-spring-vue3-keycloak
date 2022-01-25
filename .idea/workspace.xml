@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1109a0-5271-4593-8163-f461d9aeeb85" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flyway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/classes/db/migration/V1__create.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/classes/db/migration/V2__insert.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/classes/org/example/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/flyway-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jooq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jooq/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bc1109a0-5271-4593-8163-f461d9aeeb85" name="変更" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

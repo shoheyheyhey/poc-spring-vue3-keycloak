@@ -14,7 +14,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests(s -> s.mvcMatchers("/health") ///health エンドポイントのみ保護を除外す
+        http.authorizeRequests(s -> s.mvcMatchers("/users") //users エンドポイントのみ保護を除外す
             .permitAll()
             .anyRequest()
             .authenticated())
