@@ -6,16 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bc1109a0-5271-4593-8163-f461d9aeeb85" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flyway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/classes/db/migration/V1__create.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/classes/db/migration/V2__insert.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/classes/org/example/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/flyway-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jooq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jooq/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642893871230</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="jooq周りのサンプル追加">
+      <created>1643073753359</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1643073753359</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,6 +250,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="flywayとjooq周り追加" />
-    <option name="LAST_COMMIT_MESSAGE" value="flywayとjooq周り追加" />
+    <MESSAGE value="jooq周りのサンプル追加" />
+    <option name="LAST_COMMIT_MESSAGE" value="jooq周りのサンプル追加" />
   </component>
 </project>
