@@ -13,8 +13,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="backend" target="11" />
-      <module name="flyway" target="11" />
-      <module name="jooq" target="11" />
+      <module name="flyway" target="17" />
+      <module name="jooq" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
