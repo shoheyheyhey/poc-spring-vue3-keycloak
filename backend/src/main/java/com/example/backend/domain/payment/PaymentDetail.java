@@ -1,14 +1,15 @@
 package com.example.backend.domain.payment;
 
 import com.example.backend.domain.payment.value.Price;
+import lombok.Builder;
 
-public class PaymentDetail {
+@Builder public class PaymentDetail {
     public final String itemName;
-    public final Price price;
+    public final Price unitPrice;
 
-    PaymentDetail(String itemName, Price price) {
+    public PaymentDetail(String itemName, Price unitPrice) {
         this.itemName = itemName;
-        this.price = price;
+        this.unitPrice = unitPrice;
     }
 
 }

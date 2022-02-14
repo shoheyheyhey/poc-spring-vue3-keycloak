@@ -7,8 +7,8 @@ public class PaymentAndPointDate {
     public final LocalDate value;
 
     // 未来日は取り扱わない
-    PaymentAndPointDate(LocalDate value) {
-        if(LocalDate.now().isAfter(value)) {
+    public PaymentAndPointDate(LocalDate value) {
+        if(LocalDate.now().isBefore(value)) {
             throw new DomainException("未来日は想定外です");
         }
         this.value = value;

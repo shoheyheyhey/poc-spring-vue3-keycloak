@@ -4,13 +4,15 @@ import com.example.backend.domain.payment.value.Point;
 import java.util.List;
 
 public class User {
+    public final String userId;
     public final String userName;
     public final Point remainingPoint;
     public final List<PointHistory> usagePointHistory;
 
 
-    User(String userId, String userName, Point remainingPoint,
+    public User(String userId, String userName, Point remainingPoint,
             List<PointHistory> usagePointHistory) {
+        this.userId = userId;
         this.userName = userName;
         this.remainingPoint = remainingPoint;
         this.usagePointHistory = usagePointHistory;
