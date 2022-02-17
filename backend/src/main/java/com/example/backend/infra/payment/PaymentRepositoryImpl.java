@@ -43,9 +43,7 @@ public class PaymentRepositoryImpl implements PaymentRepository {
 
 
         PaymentRecord paymentRecord =
-                dsl.selectFrom(PAYMENT).where(PAYMENT.RECEIPT_ID.eq(receiptId)).fetch().stream()
-                        .findFirst().orElseThrow(() -> new InfraException(
-                                String.format("支払情報のselect(レシートID)：%s", receiptId)));
+                dsl.selectFrom(PAYMENT).where(PAYMENT.RECEIPT_ID.eq(receiptId)).fetchOne();
         List<PaymentDetailRecord> paymentDetailRecords =
                 dsl.selectFrom(PAYMENT_DETAIL).where(PAYMENT_DETAIL.RECEIPT_ID.eq(receiptId))
                         .fetch().stream().collect(Collectors.toList());
@@ -60,7 +58,7 @@ public class PaymentRepositoryImpl implements PaymentRepository {
     }
 
     /**
-     * 支払ドメイン→PaymentRecord
+     * 支払エンティティ→PaymentRecord
      *
      * @param payment
      * @return
@@ -72,7 +70,7 @@ public class PaymentRepositoryImpl implements PaymentRepository {
     }
 
     /**
-     * 支払ドメイン→PaymentDetailRecord
+     * 支払エンティティ→PaymentDetailRecord
      *
      * @param payment
      * @return
@@ -85,7 +83,7 @@ public class PaymentRepositoryImpl implements PaymentRepository {
     }
 
     /**
-     * 支払ドメイン→PaymentMethodDetailRecord
+     * 支払エンティティ→PaymentMethodDetailRecord
      *
      * @param payment
      * @return
@@ -99,7 +97,7 @@ public class PaymentRepositoryImpl implements PaymentRepository {
     }
 
     /**
-     * データモデル→支払ドメイン
+     * データモデル→支払エンティティ
      *
      * @param paymentRecord
      * @return

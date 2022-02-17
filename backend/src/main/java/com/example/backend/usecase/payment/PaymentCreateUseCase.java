@@ -1,9 +1,14 @@
-package com.example.backend.usecase;
+package com.example.backend.usecase.payment;
 
 import com.example.backend.domain.payment.Payment;
 import com.example.backend.domain.payment.PaymentDetail;
 import com.example.backend.domain.payment.PaymentMethodDetail;
 import com.example.backend.domain.payment.PaymentRepository;
+import com.example.backend.domain.payment.PointHistory;
+import com.example.backend.domain.payment.PointHistoryRepository;
+import com.example.backend.domain.payment.User;
+import com.example.backend.domain.payment.UserRepository;
+import com.example.backend.domain.payment.domainservice.ExcessPointUsageCheck;
 import com.example.backend.domain.payment.value.PaymentAndPointDate;
 import com.example.backend.domain.payment.value.Point;
 import com.example.backend.domain.payment.value.Price;
@@ -14,24 +19,38 @@ import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component @RequiredArgsConstructor public class PaymentCreateUseCase {
 
     private final PaymentRepository paymentRepository;
+    private final PointHistoryRepository pointHistoryRepository;
+    private final UserRepository userRepository;
 
+    @Transactional
     public void execute(PaymentCreateReq paymentCreateReq) {
+        // リクエストパラメータからドメインオブジェクト作成
+        Payment payment = convertRequestToPayment(paymentCreateReq);
+        PointHistory pointHistory = convertRequestToPointHistory(paymentCreateReq);
 
-        paymentRepository.insert(convertRequestToDomain(paymentCreateReq));
+
+        // 利用ポイントがユーザのポイント残高超過チェック
+        User user = userRepository.findById(payment.userId);
+        ExcessPointUsageCheck.execute(payment, user);
+
+        // 支払情報登録
+        paymentRepository.insert(payment);
+        pointHistoryRepository.insert(pointHistory);
 
     }
 
     /**
-     * リクエストパラメータをドメインにマッピングする
+     * リクエストパラメータから支払エンティティを作成
      *
      * @param request
      * @return
      */
-    private Payment convertRequestToDomain(PaymentCreateReq request) {
+    private Payment convertRequestToPayment(PaymentCreateReq request) {
         List<PaymentDetail> paymentDetails = request.getPaymentDetails().stream()
                 .map(paymentDetail -> convertRequestToDomain(paymentDetail))
                 .collect(Collectors.toList());
@@ -55,6 +74,18 @@ import org.springframework.stereotype.Component;
         return new PaymentMethodDetail(request.getPaymentMethodName(),
                 new Price(request.getPaymentAmount()));
 
+    }
+
+    /**
+     * リクエストパラメータからポイント履歴エンティティを作成
+     *
+     * @param request
+     * @return
+     */
+    private PointHistory convertRequestToPointHistory(PaymentCreateReq request) {
+        return PointHistory.builder().receiptId(request.getReceiptId()).userId(request.getUserId())
+                .pointUsageDate(new PaymentAndPointDate(request.getPaymentDate()))
+                .usagePoint(new Point(request.getUsagePoint())).build();
     }
 
 }

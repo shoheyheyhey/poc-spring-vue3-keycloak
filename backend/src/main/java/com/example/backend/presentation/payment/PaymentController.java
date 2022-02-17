@@ -1,6 +1,6 @@
 package com.example.backend.presentation.payment;
 
-import com.example.backend.usecase.PaymentCreateUseCase;
+import com.example.backend.usecase.payment.PaymentCreateUseCase;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

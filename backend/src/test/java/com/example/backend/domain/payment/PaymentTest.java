@@ -1,8 +1,6 @@
 package com.example.backend.domain.payment;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
 
 import com.example.backend.domain.payment.value.PaymentAndPointDate;
 import com.example.backend.domain.payment.value.Point;
@@ -15,8 +13,7 @@ import org.junit.jupiter.api.Test;
 
 class PaymentTest {
 
-    @Test
-    void 支払は支払詳細情報が1つもなければ作成できない() throws DomainException{
+    @Test void 支払は支払詳細情報が1つもなければ作成できない() {
         // given(前提条件)：
 
         // when(操作)：
@@ -27,19 +24,20 @@ class PaymentTest {
         Boolean grantTarget = true;
         List<PaymentDetail> paymentDetails = new ArrayList<>();
         List<PaymentMethodDetail> paymentMethodDetails = new ArrayList<>();
-        PaymentMethodDetail paymentMethodDetail = new PaymentMethodDetail("クレジットカード", new Price(2000));
+        PaymentMethodDetail paymentMethodDetail =
+                new PaymentMethodDetail("クレジットカード", new Price(2000));
         paymentMethodDetails.add(paymentMethodDetail);
         String userId = "0000000001";
 
         // then(期待する結果):
-        assertThrows(DomainException.class, ()->{
-            new Payment(receiptId,paymentDate,usagePoint,paymentPrice,grantTarget,paymentDetails, paymentMethodDetails,userId);
+        assertThrows(DomainException.class, () -> {
+            new Payment(receiptId, paymentDate, usagePoint, paymentPrice, grantTarget,
+                    paymentDetails, paymentMethodDetails, userId);
         });
 
     }
 
-    @Test
-    void 支払は支払方法詳細情報が1つもなければ作成できない() throws DomainException {
+    @Test void 支払は支払方法詳細情報が1つもなければ作成できない() throws DomainException {
         // given(前提条件)：
 
         // when(操作)：
@@ -55,8 +53,9 @@ class PaymentTest {
         String userId = "0000000001";
 
         // then(期待する結果):
-        assertThrows(DomainException.class, ()->{
-            new Payment(receiptId,paymentDate,usagePoint,paymentPrice,grantTarget,paymentDetails, paymentMethodDetails,userId);
+        assertThrows(DomainException.class, () -> {
+            new Payment(receiptId, paymentDate, usagePoint, paymentPrice, grantTarget,
+                    paymentDetails, paymentMethodDetails, userId);
         });
     }
 }

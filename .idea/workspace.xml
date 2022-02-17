@@ -4,60 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1109a0-5271-4593-8163-f461d9aeeb85" name="変更" comment="ドメイン層まで一旦実装完了">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_5_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PointHistoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/PaymentRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/PointHistoryRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/UserRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/shared/exception/InfraException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/payment/PaymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/payment/PaymentCreateReq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/payment/PaymentCreateRes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/PaymentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/value/PriceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/infra/payment/PaymentRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/presentation/payment/PaymentControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jooq/src/main/java/com/example/jooq/config/DataSourceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_2.xml" beforeDir="false" />
+    <list default="true" id="bc1109a0-5271-4593-8163-f461d9aeeb85" name="変更" comment="支払集約関連一旦完了">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_13_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_1_6_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_common_1_6_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_test_1_6_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/domainservice/ExcessPointUsageCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/domainservice/ExcessPointUsageCheckTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/infra/payment/UserRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/usecase/payment/PaymentCreateUseCaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/BackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/BackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/controller/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/controller/SampleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentMethodDetail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PointHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PointHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/value/PaymentAndPointDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/value/PaymentAndPointDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/value/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/value/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/value/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/value/Price.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/HtmlController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/PaymentRegistUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/PaymentCreateUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/BackendApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/flyway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flyway/flyway.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V1__create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V1__create.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V2__insert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V2__insert.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jooq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jooq/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/PaymentRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/PaymentRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/PointHistoryRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/PointHistoryRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/payment/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/payment/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/PaymentCreateUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentCreateUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/PaymentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/PaymentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/infra/payment/PaymentRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/infra/payment/PaymentRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +36,8 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -108,7 +77,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="プロジェクト" />
+    <property name="project.structure.last.edited" value="SDK" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20069505" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
@@ -120,22 +89,39 @@
       <recent name="$PROJECT_DIR$/flyway/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.backend.infra.payment" />
       <recent name="com.example.backend.infra.payment.shared.exception" />
       <recent name="com.example.backend.domain.payment.value" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PaymentRepositoryTest">
-    <configuration name="PaymentControllerTest.複数支払方法で複数商品の支払をポイントも利用して行う" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ExcessPointUsageCheckTest.ユーザのポイント残高が支払いの利用ポイントより小さい場合はDomainException">
+    <configuration name="ExcessPointUsageCheckTest.ユーザのポイント残高が支払いの利用ポイント以上の場合は何も起きない" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.backend.presentation.payment.*" />
+          <option name="PATTERN" value="com.example.backend.domain.payment.domainservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.backend.presentation.payment" />
-      <option name="MAIN_CLASS_NAME" value="com.example.backend.presentation.payment.PaymentControllerTest" />
-      <option name="METHOD_NAME" value="複数支払方法で複数商品の支払をポイントも利用して行う" />
+      <option name="PACKAGE_NAME" value="com.example.backend.domain.payment.domainservice" />
+      <option name="MAIN_CLASS_NAME" value="com.example.backend.domain.payment.domainservice.ExcessPointUsageCheckTest" />
+      <option name="METHOD_NAME" value="ユーザのポイント残高が支払いの利用ポイント以上の場合は何も起きない" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExcessPointUsageCheckTest.ユーザのポイント残高が支払いの利用ポイントより小さい場合はDomainException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.backend.domain.payment.domainservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.backend.domain.payment.domainservice" />
+      <option name="MAIN_CLASS_NAME" value="com.example.backend.domain.payment.domainservice.ExcessPointUsageCheckTest" />
+      <option name="METHOD_NAME" value="ユーザのポイント残高が支払いの利用ポイントより小さい場合はDomainException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -172,22 +158,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaymentTest.支払は支払い詳細情報が1つもなければ作成できない" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.backend.domain.payment.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.backend.domain.payment" />
-      <option name="MAIN_CLASS_NAME" value="com.example.backend.domain.payment.PaymentTest" />
-      <option name="METHOD_NAME" value="支払は支払い詳細情報が1つもなければ作成できない" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PaymentTest.支払は支払い方法詳細情報が1つもなければ作成できない" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -204,22 +174,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PriceTest.マイナスポイントは扱わない" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.backend.domain.payment.value.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.backend.domain.payment.value" />
-      <option name="MAIN_CLASS_NAME" value="com.example.backend.domain.payment.value.PriceTest" />
-      <option name="METHOD_NAME" value="マイナスポイントは扱わない" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PriceTest.マイナスポイントは取扱わない" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -231,6 +185,22 @@
       <option name="PACKAGE_NAME" value="com.example.backend.domain.payment.value" />
       <option name="MAIN_CLASS_NAME" value="com.example.backend.domain.payment.value.PriceTest" />
       <option name="METHOD_NAME" value="マイナスポイントは取扱わない" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTest.指定したユーザIDをfindByIdで取得できる" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.backend.infra.payment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.backend.infra.payment" />
+      <option name="MAIN_CLASS_NAME" value="com.example.backend.infra.payment.UserRepositoryTest" />
+      <option name="METHOD_NAME" value="指定したユーザIDをfindByIdで取得できる" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -402,9 +372,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.PaymentTest.支払は支払い詳細情報が1つもなければ作成できない" />
-      <item itemvalue="JUnit.PriceTest.マイナスポイントは扱わない" />
-      <item itemvalue="JUnit.PaymentControllerTest.複数支払方法で複数商品の支払をポイントも利用して行う" />
       <item itemvalue="Maven.jooq [jooq-codegen:generate]" />
       <item itemvalue="Maven.jooq [clean, install]" />
       <item itemvalue="Maven.flyway [flyway:clean, flyway:migrate]" />
@@ -413,14 +380,17 @@
       <item itemvalue="Maven.flyway [clean, install]" />
       <item itemvalue="JUnit.PaymentRepositoryTest.insertしたものがfindByIdで取得できる" />
       <item itemvalue="JUnit.PaymentRepositoryTest" />
+      <item itemvalue="JUnit.UserRepositoryTest.指定したユーザIDをfindByIdで取得できる" />
+      <item itemvalue="JUnit.ExcessPointUsageCheckTest.ユーザのポイント残高が支払いの利用ポイント以上の場合は何も起きない" />
+      <item itemvalue="JUnit.ExcessPointUsageCheckTest.ユーザのポイント残高が支払いの利用ポイントより小さい場合はDomainException" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PaymentRepositoryTest" />
+        <item itemvalue="JUnit.ExcessPointUsageCheckTest.ユーザのポイント残高が支払いの利用ポイントより小さい場合はDomainException" />
+        <item itemvalue="JUnit.ExcessPointUsageCheckTest.ユーザのポイント残高が支払いの利用ポイント以上の場合は何も起きない" />
         <item itemvalue="JUnit.PaymentRepositoryTest.insertしたものがfindByIdで取得できる" />
-        <item itemvalue="JUnit.PaymentControllerTest.複数支払方法で複数商品の支払をポイントも利用して行う" />
-        <item itemvalue="JUnit.PriceTest.マイナスポイントは扱わない" />
-        <item itemvalue="JUnit.PaymentTest.支払は支払い詳細情報が1つもなければ作成できない" />
+        <item itemvalue="JUnit.UserRepositoryTest.指定したユーザIDをfindByIdで取得できる" />
+        <item itemvalue="JUnit.PaymentRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -454,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644530398248</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="支払集約関連一旦完了">
+      <created>1644875182731</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1644875182731</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -484,14 +461,15 @@
     <MESSAGE value="flywayとjooq周り追加" />
     <MESSAGE value="テストデータ登録クエリ追加" />
     <MESSAGE value="ドメイン層まで一旦実装完了" />
-    <option name="LAST_COMMIT_MESSAGE" value="ドメイン層まで一旦実装完了" />
+    <MESSAGE value="支払集約関連一旦完了" />
+    <option name="LAST_COMMIT_MESSAGE" value="支払集約関連一旦完了" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/backend/src/test/java/com/example/backend/infra/payment/PaymentRepositoryTest.java</url>
-          <line>45</line>
+          <line>42</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

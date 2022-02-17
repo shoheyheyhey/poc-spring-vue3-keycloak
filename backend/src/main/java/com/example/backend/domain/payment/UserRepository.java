@@ -1,6 +1,6 @@
 package com.example.backend.domain.payment;
 
 public interface UserRepository {
-    public User find(String userId);
+    public User findById(String userId);
 
 }

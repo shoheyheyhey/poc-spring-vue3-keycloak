@@ -1,7 +1,6 @@
 package com.example.backend.infra.payment;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 import com.example.backend.domain.payment.Payment;
 import com.example.backend.domain.payment.PaymentDetail;
@@ -29,13 +28,11 @@ public class PaymentRepositoryTest {
     @Test public void insertしたものがfindByIdで取得できる() {
         // given(前提条件)：
         List<PaymentDetail> paymentDetails = new ArrayList<>(Arrays.asList(
-                PaymentDetail.builder().itemName("〇〇シャンプー").unitPrice(new Price(2000)).build(),
-                PaymentDetail.builder().itemName("〇〇本").unitPrice(new Price(3000)).build()));
+                PaymentDetail.builder().itemName("〇〇シャンプー").unitPrice(new Price(2000)).build()));
 
         List<PaymentMethodDetail> paymentMethodDetails = new ArrayList<>(Arrays.asList(
-                PaymentMethodDetail.builder().paymentMethodName("現金").paymentAmount(new Price(2000))
-                        .build(), PaymentMethodDetail.builder().paymentMethodName("クレジットカード")
-                        .paymentAmount(new Price(2000)).build()));
+                PaymentMethodDetail.builder().paymentMethodName("クレジットカード")
+                        .paymentAmount(new Price(1800)).build()));
 
         Payment payment =
                 new Payment("0000000003", new PaymentAndPointDate(LocalDate.of(2021, 1, 1)),
@@ -53,9 +50,14 @@ public class PaymentRepositoryTest {
         assertEquals(payment.paymentDate.value, foundPayment.paymentDate.value);
         assertEquals(payment.paymentPrice.value, foundPayment.paymentPrice.value);
         assertEquals(payment.receiptId, foundPayment.receiptId);
-        // TODO いい感じにオブジェクトの配列を比較できる仕組みを作る
-        // assertIterableEquals(payment.paymentDetails, foundPayment.paymentDetails);
-        // assertIterableEquals(payment.paymentMethodDetails, foundPayment.paymentMethodDetails);
+        assertEquals(payment.paymentDetails.get(0).itemName,
+                foundPayment.paymentDetails.get(0).itemName);
+        assertEquals(payment.paymentDetails.get(0).unitPrice.value,
+                foundPayment.paymentDetails.get(0).unitPrice.value);
+        assertEquals(payment.paymentMethodDetails.get(0).paymentAmount.value,
+                foundPayment.paymentMethodDetails.get(0).paymentAmount.value);
+        assertEquals(payment.paymentMethodDetails.get(0).paymentMethodName,
+                foundPayment.paymentMethodDetails.get(0).paymentMethodName);
 
     }
 
