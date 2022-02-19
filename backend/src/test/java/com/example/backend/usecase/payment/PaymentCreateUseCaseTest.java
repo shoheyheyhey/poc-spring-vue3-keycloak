@@ -10,9 +10,11 @@ import com.example.backend.domain.payment.PointHistory;
 import com.example.backend.domain.payment.PointHistoryRepository;
 import com.example.backend.domain.payment.User;
 import com.example.backend.domain.payment.UserRepository;
-import com.example.backend.shared.TestPaymentFactory;
-import com.example.backend.shared.TestPointHistoryFactory;
 import com.example.backend.shared.TestUserFactory;
+import com.example.backend.usecase.payment.PaymentCreateParam.PaymentDetailParam;
+import com.example.backend.usecase.payment.PaymentCreateParam.PaymentMethodDetailParam;
+import java.time.LocalDate;
+import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -32,7 +34,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
     // テストデータ(全テストで共通) TODO 後でFactoryクラス作る
     private static String userId = "0000000001";
     private static User user = TestUserFactory.create(userId);
-    private static PointHistory pointHistory = TestPointHistoryFactory.create(userId);
 
     @Test public void 支払とポイント履歴を渡すとそれぞれ登録してレシートIDが返却される() {
 
@@ -46,12 +47,18 @@ import org.mockito.junit.jupiter.MockitoExtension;
         ArgumentCaptor<PointHistory> pointHistoryCaptor =
                 ArgumentCaptor.forClass(PointHistory.class);
 
-        // 支払エンティティをユーザIDだけ個別設定(他はデフォルト値)で生成
-        Payment payment = TestPaymentFactory.create(userId);
+        // ユースケースに渡すParam TODO 後でFactory作る
+        PaymentCreateParam param = PaymentCreateParam.builder().receiptId("0000000003")
+                .paymentDate(LocalDate.of(2021, 1, 1)).usagePoint(200).paymentPrice(6000)
+                .grantTarget(true).paymentDetails(Arrays.asList(
+                        PaymentDetailParam.builder().itemName("○○本").unitPrice(3000).build()))
+                .paymentMethodDetails(Arrays.asList(
+                        PaymentMethodDetailParam.builder().paymentMethodName("電子マネー")
+                                .paymentAmount(2800).build())).userId("0000000001").build();
 
 
         // when(操作)：
-        String result = paymentCreateUseCase.execute(payment, pointHistory);
+        String result = paymentCreateUseCase.execute(param);
 
         // リポジトリが登録しようとした時の(リポジトリに受け渡された)支払、ポイント履歴を取得
         verify(paymentRepository).insert(paymentCaptor.capture());
@@ -62,19 +69,21 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
         // then(期待する結果):
         // ユースケース(依存オブジェクトモックで)実行した結果の期待値確認
-        assertEquals(payment.receiptId, result);
+        assertEquals(param.getReceiptId(), result);
 
         // ユースケースが依存するリポジトリに受け渡した期待値確認(ちょっと省略してる)
-        assertEquals(payment.receiptId, actualPayment.receiptId);
-        assertEquals(payment.paymentPrice.value, actualPayment.paymentPrice.value);
-        assertEquals(payment.paymentDate.value, actualPayment.paymentDate.value);
-        assertEquals(payment.paymentDetails.get(0).unitPrice.value, actualPayment.paymentDetails.get(0).unitPrice.value);
-        assertEquals(payment.paymentDetails.get(0).itemName, actualPayment.paymentDetails.get(0).itemName);
+        assertEquals(param.getReceiptId(), actualPayment.receiptId);
+        assertEquals(param.getPaymentPrice(), actualPayment.paymentPrice.value);
+        assertEquals(param.getPaymentDate(), actualPayment.paymentDate.value);
+        assertEquals(param.getPaymentDetails().get(0).getUnitPrice(),
+                actualPayment.paymentDetails.get(0).unitPrice.value);
+        assertEquals(param.getPaymentDetails().get(0).getItemName(),
+                actualPayment.paymentDetails.get(0).itemName);
 
-        assertEquals(pointHistory.receiptId, actualPointHistory.receiptId);
-        assertEquals(pointHistory.usagePoint.value, actualPointHistory.usagePoint.value);
-        assertEquals(pointHistory.pointUsageDate.value, actualPointHistory.pointUsageDate.value);
-        assertEquals(pointHistory.userId, actualPointHistory.userId);
+        assertEquals(param.getReceiptId(), actualPointHistory.receiptId);
+        assertEquals(param.getUsagePoint(), actualPointHistory.usagePoint.value);
+        assertEquals(param.getPaymentDate(), actualPointHistory.pointUsageDate.value);
+        assertEquals(param.getUserId(), actualPointHistory.userId);
     }
 
 }
