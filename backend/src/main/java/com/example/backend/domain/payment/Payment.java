@@ -5,11 +5,8 @@ import com.example.backend.domain.payment.value.Point;
 import com.example.backend.domain.payment.value.Price;
 import com.example.backend.domain.shared.exception.DomainException;
 import java.util.List;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
 
-
-@EqualsAndHashCode @Builder public class Payment {
+public class Payment {
     public final String receiptId;
     public final PaymentAndPointDate paymentDate;
     public final Point usagePoint;

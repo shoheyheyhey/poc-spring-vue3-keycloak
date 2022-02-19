@@ -1,8 +1,9 @@
 package com.example.backend.presentation.payment;
 
+import lombok.Builder;
 import lombok.Data;
 
-@Data public class PaymentCreateRes {
+@Builder @Data public class PaymentCreateRes {
     /**
      * レシートID
      */
