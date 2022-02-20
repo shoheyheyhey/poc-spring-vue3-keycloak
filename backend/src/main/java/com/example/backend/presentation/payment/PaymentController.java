@@ -1,5 +1,6 @@
 package com.example.backend.presentation.payment;
 
+import com.example.backend.usecase.payment.PaymentCreateDto;
 import com.example.backend.usecase.payment.PaymentCreateParam;
 import com.example.backend.usecase.payment.PaymentCreateParam.PaymentDetailParam;
 import com.example.backend.usecase.payment.PaymentCreateParam.PaymentMethodDetailParam;
@@ -25,8 +26,8 @@ import org.springframework.web.bind.annotation.RestController;
         PaymentCreateParam param = convertRequestToParam(request);
 
 
-        String receiptId = paymentCreateUseCase.execute(param);
-        return ResponseEntity.ok(PaymentCreateRes.builder().receiptId(receiptId).build());
+        PaymentCreateDto dto = paymentCreateUseCase.execute(param);
+        return ResponseEntity.ok(PaymentCreateRes.builder().receiptId(dto.getReceiptId()).build());
     }
 
     /**

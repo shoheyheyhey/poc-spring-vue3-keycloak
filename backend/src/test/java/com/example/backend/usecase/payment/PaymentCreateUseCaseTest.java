@@ -58,7 +58,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 
         // when(操作)：
-        String result = paymentCreateUseCase.execute(param);
+        PaymentCreateDto result = paymentCreateUseCase.execute(param);
 
         // リポジトリが登録しようとした時の(リポジトリに受け渡された)支払、ポイント履歴を取得
         verify(paymentRepository).insert(paymentCaptor.capture());
@@ -69,7 +69,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
         // then(期待する結果):
         // ユースケース(依存オブジェクトモックで)実行した結果の期待値確認
-        assertEquals(param.getReceiptId(), result);
+        assertEquals(param.getReceiptId(), result.getReceiptId());
 
         // ユースケースが依存するリポジトリに受け渡した期待値確認(ちょっと省略してる)
         assertEquals(param.getReceiptId(), actualPayment.receiptId);

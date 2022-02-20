@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1109a0-5271-4593-8163-f461d9aeeb85" name="変更" comment="ユースケース層の実装とテストコード作成">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentCreateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentCreateParam.java" afterDir="false" />
+    <list default="true" id="bc1109a0-5271-4593-8163-f461d9aeeb85" name="変更" comment="プレゼンテーション層とユースケース層での値の受け渡しを理想の形に変更">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/payment/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/payment/PaymentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentCreateUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentCreateUseCase.java" afterDir="false" />
@@ -431,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645273541586</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="プレゼンテーション層とユースケース層での値の受け渡しを理想の形に変更">
+      <created>1645314524798</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1645314524798</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -464,7 +469,8 @@
     <MESSAGE value="支払集約関連一旦完了" />
     <MESSAGE value="ドメインサービス作成" />
     <MESSAGE value="ユースケース層の実装とテストコード作成" />
-    <option name="LAST_COMMIT_MESSAGE" value="ユースケース層の実装とテストコード作成" />
+    <MESSAGE value="プレゼンテーション層とユースケース層での値の受け渡しを理想の形に変更" />
+    <option name="LAST_COMMIT_MESSAGE" value="プレゼンテーション層とユースケース層での値の受け渡しを理想の形に変更" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

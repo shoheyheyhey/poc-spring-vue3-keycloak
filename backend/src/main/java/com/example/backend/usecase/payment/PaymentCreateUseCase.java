@@ -24,11 +24,11 @@ import org.springframework.transaction.annotation.Transactional;
     private final PointHistoryRepository pointHistoryRepository;
     private final UserRepository userRepository;
 
-    @Transactional public String execute(PaymentCreateParam param) {
+    @Transactional public PaymentCreateDto execute(PaymentCreateParam param) {
 
         // 渡された値を基にエンティティ作成
-        Payment payment = convertRequestToPayment(param);
-        PointHistory pointHistory = convertRequestToPointHistory(param);
+        Payment payment = convertParamToPayment(param);
+        PointHistory pointHistory = convertParamToPointHistory(param);
 
         // 利用ポイントがユーザのポイント残高超過チェック
         User user = userRepository.findById(param.getUserId());
@@ -38,17 +38,17 @@ import org.springframework.transaction.annotation.Transactional;
         paymentRepository.insert(payment);
         pointHistoryRepository.insert(pointHistory);
 
-        return payment.receiptId;
+        return convertDto(payment.receiptId);
 
     }
 
     /**
-     * 渡された値から支払エンティティを作成
+     * 渡されたParamから支払エンティティを作成
      *
      * @param param
      * @return
      */
-    private Payment convertRequestToPayment(PaymentCreateParam param) {
+    private Payment convertParamToPayment(PaymentCreateParam param) {
         List<PaymentDetail> paymentDetails = param.getPaymentDetails().stream()
                 .map(paymentDetail -> new PaymentDetail(paymentDetail.getItemName(),
                         new Price(paymentDetail.getUnitPrice()))).collect(Collectors.toList());
@@ -65,14 +65,18 @@ import org.springframework.transaction.annotation.Transactional;
     }
 
     /**
-     * 渡された値ポイント履歴エンティティを作成
+     * 渡されたParamから値ポイント履歴エンティティを作成
      *
      * @param param
      * @return
      */
-    private PointHistory convertRequestToPointHistory(PaymentCreateParam param) {
+    private PointHistory convertParamToPointHistory(PaymentCreateParam param) {
         return new PointHistory(param.getUserId(), param.getReceiptId(),
                 new Point(param.getUsagePoint()), new PaymentAndPointDate(param.getPaymentDate()));
+    }
+
+    private PaymentCreateDto convertDto(String receiptId) {
+        return PaymentCreateDto.builder().receiptId(receiptId).build();
     }
 
 }
