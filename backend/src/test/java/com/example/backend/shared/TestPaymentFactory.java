@@ -21,7 +21,7 @@ public class TestPaymentFactory {
     static private final List<PaymentDetail> paymentDetails = new ArrayList<>(Arrays.asList(
             new PaymentDetail("〇〇シャンプー", new Price(2000))));
     static private final List<PaymentMethodDetail> paymentMethodDetails = new ArrayList<>(
-            Arrays.asList(new PaymentMethodDetail("クレジットカード",new Price(1800))));
+            Arrays.asList(new PaymentMethodDetail("creditCard",new Price(1800))));
     static private final String userId = "0000000001";
 
     /**

@@ -18,7 +18,7 @@ class PaymentTest {
         // when(操作)：
         List<PaymentDetail> paymentDetails = new ArrayList<>();
         List<PaymentMethodDetail> paymentMethodDetails = new ArrayList<>(
-                Arrays.asList(new PaymentMethodDetail("クレジットカード", new Price(1800))));
+                Arrays.asList(new PaymentMethodDetail("creditCard", new Price(1800))));
 
         // then(期待する結果):
         assertThrows(DomainException.class, () -> {

@@ -37,6 +37,14 @@ public class Payment {
 
     }
 
+    /**
+     * ポイント利用チェック
+     * @return
+     */
+    public boolean isUsagePoint() {
+        return this.usagePoint.value != 0;
+    }
+
 
 
 }

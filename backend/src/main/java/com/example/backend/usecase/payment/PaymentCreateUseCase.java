@@ -28,16 +28,18 @@ import org.springframework.transaction.annotation.Transactional;
 
         // 渡された値を基にエンティティ作成
         Payment payment = convertParamToPayment(param);
-        PointHistory pointHistory = convertParamToPointHistory(param);
 
-        // 利用ポイントがユーザのポイント残高超過チェック
-        User user = userRepository.findById(param.getUserId());
-        ExcessPointUsageCheck.execute(payment, user);
+        // 支払い時のポイント利用がある場合はユーザのポイント残高超過チェックしてポイント履歴登録
+        if(payment.isUsagePoint()){
+            User user = userRepository.findById(param.getUserId());
+            ExcessPointUsageCheck.execute(payment, user);
+            PointHistory pointHistory = convertParamToPointHistory(param);
+            pointHistoryRepository.insert(pointHistory);
+        }
 
         // 支払情報登録
         paymentRepository.insert(payment);
-        pointHistoryRepository.insert(pointHistory);
-
+        
         return convertDto(payment.receiptId);
 
     }
