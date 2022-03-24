@@ -4,20 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc1109a0-5271-4593-8163-f461d9aeeb85" name="変更" comment="ユースケース層からの返却をdtoで行う">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/value/PointRate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/shared/CashPaymentMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/shared/CreditCardPaymentMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/shared/ElectronicMoneyPaymentMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/shared/PaymentMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/shared/PaymentMethodType.java" afterDir="false" />
+    <list default="true" id="bc1109a0-5271-4593-8163-f461d9aeeb85" name="変更" comment="支払方法明細の支払方法区分をenumで整理">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/user/UserAndPaymentDtoQueryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/user/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/user/UserFindRes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentListGetUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/user/UserAndPaymentDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/user/UserAndPaymentDtoQueryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/user/UserPaymentDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/PaymentDetailTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/PaymentMethodDetailTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/infra/user/UserAndPaymentDtoQueryServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/shared/TestPaymentDetailFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/shared/TestPaymentMethodDetailFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentMethodDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentMethodDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentCreateUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentCreateUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/PaymentRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/PaymentRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/payment/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/payment/PaymentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/PaymentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/PaymentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/infra/payment/PaymentRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/infra/payment/PaymentRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/presentation/payment/PaymentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/presentation/payment/PaymentControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/shared/TestPaymentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/shared/TestPaymentFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/usecase/payment/PaymentCreateUseCaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/usecase/payment/PaymentCreateUseCaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V1__create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V1__create.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V2__insert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V2__insert.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +41,9 @@
       <list>
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -86,45 +98,14 @@
       <recent name="com.example.backend.domain.shared" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.backend.domain.payment.value" />
-      <recent name="com.example.backend.domain.shared" />
-      <recent name="com.example.backend.usecase.payment" />
+      <recent name="com.example.backend.infra.user" />
+      <recent name="com.example.backend.presentation.user" />
+      <recent name="com.example.backend.usecase.user" />
+      <recent name="com.example.backend.domain.payment" />
       <recent name="com.example.backend.shared" />
-      <recent name="com.example.backend.infra.payment" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PaymentTest.支払は支払詳細情報が1つもなければ作成できない">
-    <configuration name="PaymentCreateUseCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.backend.usecase.payment.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.backend.usecase.payment" />
-      <option name="MAIN_CLASS_NAME" value="com.example.backend.usecase.payment.PaymentCreateUseCaseTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PaymentCreateUseCaseTest.ユーザリポジトリから取得と支払とポイント履歴リポジトリへの受け渡しが正しくできること" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.backend.usecase.payment.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.backend.usecase.payment" />
-      <option name="MAIN_CLASS_NAME" value="com.example.backend.usecase.payment.PaymentCreateUseCaseTest" />
-      <option name="METHOD_NAME" value="ユーザリポジトリから取得と支払とポイント履歴リポジトリへの受け渡しが正しくできること" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.PaymentCreateUseCaseTest.支払とポイント履歴を渡すとそれぞれ登録してレシートIDが返却される">
     <configuration name="PaymentCreateUseCaseTest.支払とポイント履歴を渡すとそれぞれ登録してレシートIDが返却される" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -141,17 +122,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaymentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PaymentRepositoryTest.insertしたものがfindByIdで取得できる" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.backend.domain.payment.*" />
+          <option name="PATTERN" value="com.example.backend.infra.payment.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.backend.domain.payment" />
-      <option name="MAIN_CLASS_NAME" value="com.example.backend.domain.payment.PaymentTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.example.backend.infra.payment" />
+      <option name="MAIN_CLASS_NAME" value="com.example.backend.infra.payment.PaymentRepositoryTest" />
+      <option name="METHOD_NAME" value="insertしたものがfindByIdで取得できる" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -167,6 +149,22 @@
       <option name="PACKAGE_NAME" value="com.example.backend.domain.payment" />
       <option name="MAIN_CLASS_NAME" value="com.example.backend.domain.payment.PaymentTest" />
       <option name="METHOD_NAME" value="支払は支払詳細情報が1つもなければ作成できない" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentTest.支払は支払方法詳細情報が1つもなければ作成できない" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.backend.domain.payment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.backend.domain.payment" />
+      <option name="MAIN_CLASS_NAME" value="com.example.backend.domain.payment.PaymentTest" />
+      <option name="METHOD_NAME" value="支払は支払方法詳細情報が1つもなければ作成できない" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -199,6 +197,22 @@
       <option name="PACKAGE_NAME" value="com.example.backend.domain.payment.value" />
       <option name="MAIN_CLASS_NAME" value="com.example.backend.domain.payment.value.PriceTest" />
       <option name="METHOD_NAME" value="マイナスポイントは取扱わない" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserAndPaymentDtoQueryServiceTest.ユーザIDで取得できる" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.backend.infra.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.backend.infra.user" />
+      <option name="MAIN_CLASS_NAME" value="com.example.backend.infra.user.UserAndPaymentDtoQueryServiceTest" />
+      <option name="METHOD_NAME" value="ユーザIDで取得できる" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -376,19 +390,19 @@
       <item itemvalue="Maven.backend [clean, install]" />
       <item itemvalue="Maven.backend [spring-boot:run]" />
       <item itemvalue="Maven.flyway [clean, install]" />
-      <item itemvalue="JUnit.PaymentTest" />
-      <item itemvalue="JUnit.PaymentCreateUseCaseTest.ユーザリポジトリから取得と支払とポイント履歴リポジトリへの受け渡しが正しくできること" />
-      <item itemvalue="JUnit.PaymentCreateUseCaseTest" />
-      <item itemvalue="JUnit.PaymentCreateUseCaseTest.支払とポイント履歴を渡すとそれぞれ登録してレシートIDが返却される" />
+      <item itemvalue="JUnit.PaymentRepositoryTest.insertしたものがfindByIdで取得できる" />
+      <item itemvalue="JUnit.UserAndPaymentDtoQueryServiceTest.ユーザIDで取得できる" />
       <item itemvalue="JUnit.PaymentTest.支払は支払詳細情報が1つもなければ作成できない" />
+      <item itemvalue="JUnit.PaymentTest.支払は支払方法詳細情報が1つもなければ作成できない" />
+      <item itemvalue="JUnit.PaymentCreateUseCaseTest.支払とポイント履歴を渡すとそれぞれ登録してレシートIDが返却される" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PaymentTest.支払は支払詳細情報が1つもなければ作成できない" />
         <item itemvalue="JUnit.PaymentCreateUseCaseTest.支払とポイント履歴を渡すとそれぞれ登録してレシートIDが返却される" />
-        <item itemvalue="JUnit.PaymentCreateUseCaseTest.ユーザリポジトリから取得と支払とポイント履歴リポジトリへの受け渡しが正しくできること" />
-        <item itemvalue="JUnit.PaymentCreateUseCaseTest" />
-        <item itemvalue="JUnit.PaymentTest" />
+        <item itemvalue="JUnit.PaymentTest.支払は支払方法詳細情報が1つもなければ作成できない" />
+        <item itemvalue="JUnit.PaymentTest.支払は支払詳細情報が1つもなければ作成できない" />
+        <item itemvalue="JUnit.UserAndPaymentDtoQueryServiceTest.ユーザIDで取得できる" />
+        <item itemvalue="JUnit.PaymentRepositoryTest.insertしたものがfindByIdで取得できる" />
       </list>
     </recent_temporary>
   </component>
@@ -457,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645315403792</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="支払方法明細の支払方法区分をenumで整理">
+      <created>1646550645207</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1646550645207</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -492,7 +513,8 @@
     <MESSAGE value="ユースケース層の実装とテストコード作成" />
     <MESSAGE value="プレゼンテーション層とユースケース層での値の受け渡しを理想の形に変更" />
     <MESSAGE value="ユースケース層からの返却をdtoで行う" />
-    <option name="LAST_COMMIT_MESSAGE" value="ユースケース層からの返却をdtoで行う" />
+    <MESSAGE value="支払方法明細の支払方法区分をenumで整理" />
+    <option name="LAST_COMMIT_MESSAGE" value="支払方法明細の支払方法区分をenumで整理" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -501,6 +523,11 @@
           <url>file://$PROJECT_DIR$/backend/src/test/java/com/example/backend/infra/payment/PaymentRepositoryTest.java</url>
           <line>25</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentCreateUseCase.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -52,6 +52,7 @@ CREATE TABLE sample.payment_detail (
   receipt_id varchar(10),
   item_name varchar(255),
   unit_price integer,
+  grant_point integer,
   PRIMARY KEY(receipt_id, item_name),
   FOREIGN KEY(receipt_id) REFERENCES sample.payment(receipt_id)
 );
@@ -59,12 +60,14 @@ COMMENT ON TABLE sample.payment_detail IS '支払明細';
 COMMENT ON COLUMN sample.payment_detail.receipt_id IS 'レシートID';
 COMMENT ON COLUMN sample.payment_detail.item_name IS '商品名';
 COMMENT ON COLUMN sample.payment_detail.unit_price IS '商品単価';
+COMMENT ON COLUMN sample.payment_detail.grant_point IS '付与ポイント';
 
 -- 支払方法明細
 CREATE TABLE sample.payment_method_detail (
   receipt_id varchar(10),
   payment_method_name varchar(255),
   payment_amount integer,
+  grant_point integer,
   PRIMARY KEY(receipt_id, payment_method_name),
   FOREIGN KEY(receipt_id) REFERENCES sample.payment(receipt_id)
 );
@@ -72,3 +75,4 @@ COMMENT ON TABLE sample.payment_method_detail IS '支払方法明細';
 COMMENT ON COLUMN sample.payment_method_detail.receipt_id IS 'レシートID';
 COMMENT ON COLUMN sample.payment_method_detail.payment_method_name IS '支払方法名';
 COMMENT ON COLUMN sample.payment_method_detail.payment_amount IS '支払金額';
+COMMENT ON COLUMN sample.payment_method_detail.grant_point IS '付与ポイント';

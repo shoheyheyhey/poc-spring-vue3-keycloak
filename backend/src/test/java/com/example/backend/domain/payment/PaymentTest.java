@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.example.backend.domain.payment.value.Price;
 import com.example.backend.domain.shared.exception.DomainException;
+import com.example.backend.shared.TestPaymentDetailFactory;
 import com.example.backend.shared.TestPaymentFactory;
+import com.example.backend.shared.TestPaymentMethodDetailFactory;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +20,7 @@ class PaymentTest {
         // when(操作)：
         List<PaymentDetail> paymentDetails = new ArrayList<>();
         List<PaymentMethodDetail> paymentMethodDetails = new ArrayList<>(
-                Arrays.asList(new PaymentMethodDetail("creditCard", new Price(1800))));
+                Arrays.asList(TestPaymentMethodDetailFactory.create()));
 
         // then(期待する結果):
         assertThrows(DomainException.class, () -> {
@@ -33,9 +35,7 @@ class PaymentTest {
         // when(操作)：
         List<PaymentDetail> paymentDetails = new ArrayList<>();
         List<PaymentMethodDetail> paymentMethodDetails =
-                new ArrayList<>(Arrays.asList(new PaymentMethodDetail("〇〇本", new Price(2000))));
-
-
+                new ArrayList<>(Arrays.asList(TestPaymentMethodDetailFactory.create()));
 
         // then(期待する結果):
         assertThrows(DomainException.class, () -> {

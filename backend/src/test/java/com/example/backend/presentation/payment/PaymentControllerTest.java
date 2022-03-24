@@ -7,8 +7,10 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
-@SpringBootTest public class PaymentControllerTest {
+@SpringBootTest @Transactional
+    public class PaymentControllerTest {
 
     @Autowired PaymentController target;
 
@@ -20,11 +22,11 @@ import org.springframework.boot.test.context.SpringBootTest;
                         PaymentDetailReq.builder().itemName("○○シャンプー").unitPrice(3200).build(),
                         PaymentDetailReq.builder().itemName("○○本").unitPrice(3000).build()))
                 .paymentMethodDetails(Arrays.asList(
-                        PaymentMethodDetailReq.builder().paymentMethodName("現金").paymentAmount(4000)
+                        PaymentMethodDetailReq.builder().paymentMethodName("cash").paymentAmount(4000)
                                 .build(),
-                        PaymentMethodDetailReq.builder().paymentMethodName("クレジットカード")
+                        PaymentMethodDetailReq.builder().paymentMethodName("creditCard")
                                 .paymentAmount(1000).build(),
-                        PaymentMethodDetailReq.builder().paymentMethodName("電子マネー")
+                        PaymentMethodDetailReq.builder().paymentMethodName("electronicMoney")
                                 .paymentAmount(1000).build())).userId("0000000001").build();
 
         // when(操作)：

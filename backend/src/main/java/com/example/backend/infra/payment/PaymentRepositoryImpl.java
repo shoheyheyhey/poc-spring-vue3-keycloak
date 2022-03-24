@@ -11,7 +11,6 @@ import com.example.backend.domain.payment.PaymentRepository;
 import com.example.backend.domain.payment.value.PaymentAndPointDate;
 import com.example.backend.domain.payment.value.Point;
 import com.example.backend.domain.payment.value.Price;
-import com.example.backend.infra.payment.shared.exception.InfraException;
 import com.example.jooq.tables.records.PaymentDetailRecord;
 import com.example.jooq.tables.records.PaymentMethodDetailRecord;
 import com.example.jooq.tables.records.PaymentRecord;
@@ -28,20 +27,17 @@ public class PaymentRepositoryImpl implements PaymentRepository {
     @Autowired private DSLContext dsl;
 
     public void insert(Payment payment) {
-
         dsl.insertInto(PAYMENT).set(convertDomainToPaymentRecord(payment)).execute();
         dsl.insertInto(PAYMENT_DETAIL, PAYMENT_DETAIL.RECEIPT_ID, PAYMENT_DETAIL.ITEM_NAME,
-                        PAYMENT_DETAIL.UNIT_PRICE)
+                        PAYMENT_DETAIL.UNIT_PRICE, PAYMENT_DETAIL.GRANT_POINT)
                 .valuesOfRecords(convertDomainToPaymentDetailRecord(payment)).execute();
         dsl.insertInto(PAYMENT_METHOD_DETAIL, PAYMENT_METHOD_DETAIL.RECEIPT_ID,
-                        PAYMENT_METHOD_DETAIL.PAYMENT_METHOD_NAME, PAYMENT_METHOD_DETAIL.PAYMENT_AMOUNT)
+                        PAYMENT_METHOD_DETAIL.PAYMENT_METHOD_NAME, PAYMENT_METHOD_DETAIL.PAYMENT_AMOUNT,
+                        PAYMENT_METHOD_DETAIL.GRANT_POINT)
                 .valuesOfRecords(convertDomainToPaymentMethodDetailRecord(payment)).execute();
-
     }
 
     public Payment findById(String receiptId) {
-
-
         PaymentRecord paymentRecord =
                 dsl.selectFrom(PAYMENT).where(PAYMENT.RECEIPT_ID.eq(receiptId)).fetchOne();
         List<PaymentDetailRecord> paymentDetailRecords =
@@ -53,9 +49,22 @@ public class PaymentRepositoryImpl implements PaymentRepository {
                         .collect(Collectors.toList());
         return convertRecordToPayment(paymentRecord, paymentDetailRecords,
                 paymentMethodDetailRecords);
-
-
     }
+
+    public Payment findByUserId(String userId) {
+        PaymentRecord paymentRecord =
+                dsl.selectFrom(PAYMENT).where(PAYMENT.USER_ID.eq(userId)).fetchOne();
+        List<PaymentDetailRecord> paymentDetailRecords = dsl.selectFrom(PAYMENT_DETAIL)
+                .where(PAYMENT_DETAIL.RECEIPT_ID.eq(paymentRecord.getReceiptId())).fetch().stream()
+                .collect(Collectors.toList());
+        List<PaymentMethodDetailRecord> paymentMethodDetailRecords =
+                dsl.selectFrom(PAYMENT_METHOD_DETAIL)
+                        .where(PAYMENT_METHOD_DETAIL.RECEIPT_ID.eq(paymentRecord.getReceiptId()))
+                        .fetch().stream().collect(Collectors.toList());
+        return convertRecordToPayment(paymentRecord, paymentDetailRecords,
+                paymentMethodDetailRecords);
+    }
+
 
     /**
      * 支払エンティティ→PaymentRecord
@@ -78,7 +87,7 @@ public class PaymentRepositoryImpl implements PaymentRepository {
     private List<PaymentDetailRecord> convertDomainToPaymentDetailRecord(Payment payment) {
         return payment.paymentDetails.stream().map(paymentDetail -> {
             return new PaymentDetailRecord(payment.receiptId, paymentDetail.itemName,
-                    paymentDetail.unitPrice.value);
+                    paymentDetail.unitPrice.value, paymentDetail.grantPoint.value);
         }).collect(Collectors.toList());
     }
 
@@ -92,7 +101,8 @@ public class PaymentRepositoryImpl implements PaymentRepository {
             Payment payment) {
         return payment.paymentMethodDetails.stream().map(paymentMethodDetail -> {
             return new PaymentMethodDetailRecord(payment.receiptId,
-                    paymentMethodDetail.paymentMethodName, paymentMethodDetail.paymentAmount.value);
+                    paymentMethodDetail.paymentMethodName, paymentMethodDetail.paymentAmount.value,
+                    paymentMethodDetail.grantPoint.value);
         }).collect(Collectors.toList());
     }
 

@@ -19,9 +19,9 @@ public class TestPaymentFactory {
     static private final Point usagePoint = new Point(200);
     static private final boolean grantTarget = true;
     static private final List<PaymentDetail> paymentDetails = new ArrayList<>(Arrays.asList(
-            new PaymentDetail("〇〇シャンプー", new Price(2000))));
+            TestPaymentDetailFactory.create()));
     static private final List<PaymentMethodDetail> paymentMethodDetails = new ArrayList<>(
-            Arrays.asList(new PaymentMethodDetail("creditCard",new Price(1800))));
+            Arrays.asList(TestPaymentMethodDetailFactory.create()));
     static private final String userId = "0000000001";
 
     /**

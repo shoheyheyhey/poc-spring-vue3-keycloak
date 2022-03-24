@@ -37,10 +37,15 @@ public class PaymentRepositoryTest {
                 foundPayment.paymentDetails.get(0).itemName);
         assertEquals(payment.paymentDetails.get(0).unitPrice.value,
                 foundPayment.paymentDetails.get(0).unitPrice.value);
+        assertEquals(payment.paymentDetails.get(0).grantPoint.value,
+                foundPayment.paymentDetails.get(0).grantPoint.value);
+
         assertEquals(payment.paymentMethodDetails.get(0).paymentAmount.value,
                 foundPayment.paymentMethodDetails.get(0).paymentAmount.value);
         assertEquals(payment.paymentMethodDetails.get(0).paymentMethodName,
                 foundPayment.paymentMethodDetails.get(0).paymentMethodName);
+        assertEquals(payment.paymentMethodDetails.get(0).grantPoint.value,
+                foundPayment.paymentMethodDetails.get(0).grantPoint.value);
 
     }
 

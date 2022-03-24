@@ -53,7 +53,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
                 .grantTarget(true).paymentDetails(Arrays.asList(
                         PaymentDetailParam.builder().itemName("○○本").unitPrice(3000).build()))
                 .paymentMethodDetails(Arrays.asList(
-                        PaymentMethodDetailParam.builder().paymentMethodName("電子マネー")
+                        PaymentMethodDetailParam.builder().paymentMethodName("electronicMoney")
                                 .paymentAmount(2800).build())).userId("0000000001").build();
 
 
