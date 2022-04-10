@@ -2,17 +2,16 @@ package com.example.backend.presentation.user;
 
 import com.example.backend.usecase.user.UserAndPaymentDto;
 import com.example.backend.usecase.user.UserAndPaymentDtoQueryService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController @Validated public class UserController {
+@RestController @Validated @RequiredArgsConstructor public class UserController {
 
-    @Autowired private UserAndPaymentDtoQueryService userAndPaymentDtoQueryService;
-
+    private final UserAndPaymentDtoQueryService userAndPaymentDtoQueryService;
 
     @GetMapping("/user/{userId}")
     public ResponseEntity<UserFindRes> find(@PathVariable("userId") String userId) {

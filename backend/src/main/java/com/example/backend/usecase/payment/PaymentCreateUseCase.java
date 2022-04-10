@@ -39,7 +39,7 @@ import org.springframework.transaction.annotation.Transactional;
 
         // 支払情報登録
         paymentRepository.insert(payment);
-        
+
         return convertDto(payment.receiptId);
 
     }
