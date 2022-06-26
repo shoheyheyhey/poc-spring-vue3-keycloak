@@ -1,33 +1,49 @@
 -- データ投入
--- ユーザ
-INSERT INTO sample.user values
-  ('0000000001', 'サンプル 太郎', 500),
-  ('0000000002', 'サンプル 次郎', 0)
+-- アプリユーザ
+INSERT INTO sample.app_user values
+  ('1', 10000, 10000),
+  ('2', 20000, 30000)
 ;
 
--- 支払
-INSERT INTO sample.payment values
-  ('0000000001', '2021/01/01 10:10:00', 200, 6000, true, '0000000001'),
-  ('0000000002', '2021/01/02 11:10:00', 300, 4000, false, '0000000001')
+-- 決済手段
+INSERT INTO sample.payment_method values
+  ('1', 'credit_card', 1),
+  ('2', 'prepaid_card', 2)
 ;
 
--- ポイント利用履歴
-INSERT INTO sample.point_history values
-  ('0000000001', '0000000001', 200, '2021/01/01 10:10:00'),
-  ('0000000001', '0000000002', 300, '2021/01/02 11:10:00')
+-- 店舗
+INSERT INTO sample.shop values
+  ('1', 'つりきち新宿店'),
+  ('2', 'つりきち渋谷店')
 ;
 
--- 支払明細
-INSERT INTO sample.payment_detail values
-  ('0000000001', '〇〇シャンプー', 3200, 32),
-  ('0000000001', '〇〇本', 3000, 30),
-  ('0000000002', '〇〇食器', 4300, 43)
+-- キャンペーン
+INSERT INTO sample.campaign values
+  ('1', 'PEY!PEY!PEY!10%還元', 'rate'),
+  ('2', 'PAY!PEY!PEY!20pt還元', 'point')
 ;
 
--- 支払方法明細
-INSERT INTO sample.payment_method_detail values
-  ('0000000001', 'cash', 2000, 20),
-  ('0000000001', 'creditCard', 2000, 40),
-  ('0000000001', 'electronicMoney', 2000, 60),
-  ('0000000002', 'creditCard', 4000, 80)
+-- キャンペーン店舗条件
+INSERT INTO sample.campaign_shop_condition values
+  ('1', '1'),
+  ('1', '2'),
+  ('2', '1')
+;
+
+-- キャンペーン取引金額条件
+INSERT INTO sample.campaign_transaction_amount_condition values
+  ('1', 100, 1000000, 10),
+  ('2', 100, 1000000, 20)
+;
+
+-- 取引
+INSERT INTO sample.transactions values
+  ('2022030312101010000000', 1000, '1', '1', '1'),
+  ('2022030312101020000000', 1000, '1', '2', '1')
+;
+
+-- 取引適用キャンペーン
+INSERT INTO sample.grant_campaign values
+  ('2022030312101020000000', '1', 100),
+  ('2022030312101020000000', '2', 20)
 ;

@@ -2,77 +2,111 @@
 CREATE SCHEMA sample;
 
 --TABLEを作成
--- ユーザ
-CREATE TABLE sample.user (
-  user_id varchar(10),
-  user_name varchar(255),
-  remaining_point integer,
-  PRIMARY KEY(user_id)
+-- アプリユーザ
+CREATE TABLE sample.app_user (
+  app_user_id varchar(10),
+  settlement_upper_limit integer not null,
+  charge_upper_limit integer not null,
+  PRIMARY KEY(app_user_id)
 );
-COMMENT ON TABLE sample.user IS 'ユーザ';
-COMMENT ON COLUMN sample.user.user_id IS 'ユーザID';
-COMMENT ON COLUMN sample.user.user_name IS 'ユーザ名';
-COMMENT ON COLUMN sample.user.remaining_point IS 'ポイント残高';
+COMMENT ON TABLE sample.app_user IS 'アプリユーザ';
+COMMENT ON COLUMN sample.app_user.app_user_id IS 'アプリユーザID';
+COMMENT ON COLUMN sample.app_user.settlement_upper_limit IS '決済上限金額';
+COMMENT ON COLUMN sample.app_user.settlement_upper_limit IS 'チャージ上限金額';
 
--- 支払
-CREATE TABLE sample.payment (
-  receipt_id varchar(10),
-  payment_date date,
-  usage_point integer,
-  payment_price integer,
-  grant_type boolean,
-  user_id varchar(10),
-  PRIMARY KEY(receipt_id),
-  FOREIGN KEY(user_id) REFERENCES sample.user(user_id)
+-- 決済手段
+CREATE TABLE sample.payment_method (
+  payment_method_id varchar(10),
+  payment_type varchar(20) not null,
+  app_user_id varchar(1) not null,
+  PRIMARY KEY(payment_method_id),
+  FOREIGN KEY(app_user_id) REFERENCES sample.app_user(app_user_id),
+  CHECK(payment_type='prepaid_card' OR payment_type='credit_card' OR payment_type='electronic_money' OR payment_type='bank_account')
 );
-COMMENT ON TABLE sample.payment IS '支払';
-COMMENT ON COLUMN sample.payment.receipt_id IS 'レシートID';
-COMMENT ON COLUMN sample.payment.payment_date IS '支払日';
-COMMENT ON COLUMN sample.payment.usage_point IS '利用ポイント';
-COMMENT ON COLUMN sample.payment.payment_price IS '支払金額';
-COMMENT ON COLUMN sample.payment.grant_type IS 'ポイント付与対象';
-COMMENT ON COLUMN sample.payment.user_id IS 'ユーザID';
+COMMENT ON TABLE sample.payment_method IS '決済手段';
+COMMENT ON COLUMN sample.payment_method.payment_method_id IS '決済手段ID';
+COMMENT ON COLUMN sample.payment_method.payment_type IS '決済区分';
+COMMENT ON COLUMN sample.payment_method.app_user_id IS 'アプリユーザID';
 
--- ポイント利用履歴
-CREATE TABLE sample.point_history (
-  user_id varchar(10) references sample.user(user_id),
-  receipt_id varchar(10) references sample.payment(receipt_id),
-  usage_point integer,
-  point_usage_date date,
-  PRIMARY KEY(user_id, receipt_id)
+-- 店舗
+CREATE TABLE sample.shop (
+  shop_id varchar(10),
+  shop_name varchar(255) not null,
+  PRIMARY KEY(shop_id)
 );
-COMMENT ON TABLE sample.point_history IS 'ポイント履歴';
-COMMENT ON COLUMN sample.point_history.user_id IS 'ユーザID';
-COMMENT ON COLUMN sample.point_history.usage_point IS '利用ポイント数';
-COMMENT ON COLUMN sample.point_history.point_usage_date IS 'ポイント利用日';
+COMMENT ON TABLE sample.shop IS '店舗';
+COMMENT ON COLUMN sample.shop.shop_id IS '店舗ID';
+COMMENT ON COLUMN sample.shop.shop_name IS '店舗名';
 
-
--- 支払明細
-CREATE TABLE sample.payment_detail (
-  receipt_id varchar(10),
-  item_name varchar(255),
-  unit_price integer,
-  grant_point integer,
-  PRIMARY KEY(receipt_id, item_name),
-  FOREIGN KEY(receipt_id) REFERENCES sample.payment(receipt_id)
+-- キャンペーン
+CREATE TABLE sample.campaign (
+  campaign_id varchar(10),
+  campaign_name varchar(255) not null,
+  grant_unit_type varchar(10) not null,
+  PRIMARY KEY(campaign_id),
+  CHECK(grant_unit_type='rate' OR grant_unit_type='point')
 );
-COMMENT ON TABLE sample.payment_detail IS '支払明細';
-COMMENT ON COLUMN sample.payment_detail.receipt_id IS 'レシートID';
-COMMENT ON COLUMN sample.payment_detail.item_name IS '商品名';
-COMMENT ON COLUMN sample.payment_detail.unit_price IS '商品単価';
-COMMENT ON COLUMN sample.payment_detail.grant_point IS '付与ポイント';
+COMMENT ON TABLE sample.campaign IS 'キャンペーン';
+COMMENT ON COLUMN sample.campaign.campaign_id IS 'キャンペーンID';
+COMMENT ON COLUMN sample.campaign.campaign_name IS 'キャンペーン名';
+COMMENT ON COLUMN sample.campaign.grant_unit_type IS '付与単位';
 
--- 支払方法明細
-CREATE TABLE sample.payment_method_detail (
-  receipt_id varchar(10),
-  payment_method_name varchar(255),
-  payment_amount integer,
-  grant_point integer,
-  PRIMARY KEY(receipt_id, payment_method_name),
-  FOREIGN KEY(receipt_id) REFERENCES sample.payment(receipt_id)
+-- キャンペーン店舗条件
+CREATE TABLE sample.campaign_shop_condition (
+  campaign_id varchar(10),
+  shop_id varchar(10),
+  PRIMARY KEY(campaign_id, shop_id),
+  FOREIGN KEY(campaign_id) REFERENCES sample.campaign(campaign_id),
+  FOREIGN KEY(shop_id) REFERENCES sample.shop(shop_id)
 );
-COMMENT ON TABLE sample.payment_method_detail IS '支払方法明細';
-COMMENT ON COLUMN sample.payment_method_detail.receipt_id IS 'レシートID';
-COMMENT ON COLUMN sample.payment_method_detail.payment_method_name IS '支払方法名';
-COMMENT ON COLUMN sample.payment_method_detail.payment_amount IS '支払金額';
-COMMENT ON COLUMN sample.payment_method_detail.grant_point IS '付与ポイント';
+COMMENT ON TABLE sample.campaign_shop_condition IS 'キャンペーン店舗';
+COMMENT ON COLUMN sample.campaign_shop_condition.campaign_id IS 'キャンペーンID';
+COMMENT ON COLUMN sample.campaign_shop_condition.shop_id IS '店舗ID';
+
+-- キャンペーン取引金額条件
+CREATE TABLE sample.campaign_transaction_amount_condition (
+  campaign_id varchar(10),
+  minimum_transaction_amount integer,
+  maximum_transaction_amount integer,
+  grant_number integer not null,
+  PRIMARY KEY(campaign_id, minimum_transaction_amount, maximum_transaction_amount),
+  FOREIGN KEY(campaign_id) REFERENCES sample.campaign(campaign_id)
+);
+COMMENT ON TABLE sample.campaign_transaction_amount_condition IS 'キャンペーン適用条件金額';
+COMMENT ON COLUMN sample.campaign_transaction_amount_condition.campaign_id IS 'キャンペーンID';
+COMMENT ON COLUMN sample.campaign_transaction_amount_condition.minimum_transaction_amount IS '下限取引金額';
+COMMENT ON COLUMN sample.campaign_transaction_amount_condition.maximum_transaction_amount IS '上限取引金額';
+COMMENT ON COLUMN sample.campaign_transaction_amount_condition.grant_number IS '付与数';
+
+-- 取引
+CREATE TABLE sample.transactions (
+  transaction_id varchar(30),
+  transaction_amount integer not null,
+  app_user_id varchar(10) not null,
+  payment_method_id varchar(10) not null,
+  shop_id varchar(10) not null,
+  PRIMARY KEY(transaction_id),
+  FOREIGN KEY(app_user_id) REFERENCES sample.app_user(app_user_id),
+  FOREIGN KEY(payment_method_id) REFERENCES sample.payment_method(payment_method_id),
+  FOREIGN KEY(shop_id) REFERENCES sample.shop(shop_id)
+);
+COMMENT ON TABLE sample.transactions IS '取引';
+COMMENT ON COLUMN sample.transactions.transaction_id IS '取引ID';
+COMMENT ON COLUMN sample.transactions.transaction_amount IS '取引金額';
+COMMENT ON COLUMN sample.transactions.app_user_id IS 'アプリユーザID';
+COMMENT ON COLUMN sample.transactions.payment_method_id IS '決済手段ID';
+COMMENT ON COLUMN sample.transactions.shop_id IS '店舗ID';
+
+-- 取引適用キャンペーン
+CREATE TABLE sample.grant_campaign (
+  transaction_id varchar(30),
+  campaign_id varchar(10) not null,
+  grant_point integer not null,
+  PRIMARY KEY(transaction_id, campaign_id),
+  FOREIGN KEY(transaction_id) REFERENCES sample.transactions(transaction_id),
+  FOREIGN KEY(campaign_id) REFERENCES sample.campaign(campaign_id)
+);
+COMMENT ON TABLE sample.grant_campaign IS '取引適用キャンペーン';
+COMMENT ON COLUMN sample.grant_campaign.transaction_id IS '取引ID';
+COMMENT ON COLUMN sample.grant_campaign.campaign_id IS 'キャンペーンID';
+COMMENT ON COLUMN sample.grant_campaign.grant_point IS 'ポイント';
