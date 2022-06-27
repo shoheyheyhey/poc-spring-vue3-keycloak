@@ -5,127 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1109a0-5271-4593-8163-f461d9aeeb85" name="変更" comment="良いコード悪いコードで学んだことをサンプル実装">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/shared/exception/DomainException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/TransactionAppUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/TransactionAppUserRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaignList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaignListRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaignListRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/TransactionPaymentMethodRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/TransactionPaymentMethodRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/point/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/shop/TransactionShopRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/shop/TransactionShopRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/shared/TestSupport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/campaign/GrantCampaignRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/paymentmethod/TransactionPaymentMethodRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_stephenc_jcip_jcip_annotations_1_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_content_type_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_lang_tag_1_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_nimbus_jose_jwt_9_10_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_oauth2_oidc_sdk_9_9_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_oauth2_resource_server_2_5_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_core_5_5_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_jose_5_5_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_resource_server_5_5_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/BankAccountPaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/BankAccountWithdrawalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/CreditCardPaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/CreditCardWithdrawalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/DepositService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/DepositTransactionPaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/DepositTransactionPaymentMethodRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/DepositTransactionPaymentMethodRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/ElectronicMoneyPaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/ElectronicMoneyWithdrawalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/PrepaidCardDepositService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/PrepaidCardPaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/PrepaidCardWithdrawalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/WithdrawalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/WithdrawalTransactionPaymentMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/config/WebMvcConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/controller/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/SampleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/Payment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentMethodDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PaymentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PointHistory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/PointHistoryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/domainservice/ExcessPointUsageCheck.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/value/PaymentAndPointDate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/value/Point.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/value/PointRate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/payment/value/Price.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/shared/CashPaymentMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/shared/CreditCardPaymentMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/shared/ElectronicMoneyPaymentMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/shared/PaymentMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/shared/PaymentMethodType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/domain/shared/exception/DomainException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/shared/exception/InfraException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/PaymentRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/PointHistoryRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/UserRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/payment/shared/exception/InfraException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/infra/user/UserAndPaymentDtoQueryServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/payment/PaymentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/payment/PaymentCreateReq.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/payment/PaymentCreateRes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/shared/exception/ExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/user/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/presentation/user/UserFindRes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/share/GrantUnitType.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantUnitType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/share/PaymentMethodType.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/PaymentMethodType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/AppUserId.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/AppUserId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/PaymentMethodId.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/PaymentMethodId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/Point.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/PointPaymentMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/PointUnitGrantCampaign.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/PointUnitGrantCampaign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/RateUnitGrantCampaign.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/RateUnitGrantCampaign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/ShopId.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/shop/ShopId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/TransactionAppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/TransactionAppUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/TransactionApplicableCampaign.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/TransactionApplicableCampaignList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/TransactionId.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/TransactionId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/TransactionPaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/TransactionPaymentMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/TransactionShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/shop/TransactionShop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/UsagePoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/settlement/SettlementAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementAmount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/settlement/SettlementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/settlement/SettlementCreateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementCreateDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/settlement/SettlementCreateParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementCreateParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/settlement/SettlementCreateReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementCreateReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/settlement/SettlementCreateRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementCreateRes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/settlement/SettlementCreateUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementCreateUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transaction/settlement/SettlementTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentCreateDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentCreateParam.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentCreateUseCase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentListGetUseCase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/user/UserAndPaymentDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/user/UserAndPaymentDtoQueryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/user/UserPaymentDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/PaymentDetailTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/PaymentMethodDetailTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/PaymentTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/domainservice/ExcessPointUsageCheckTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/domain/payment/value/PriceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/infra/payment/PaymentRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/infra/payment/UserRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/infra/user/UserAndPaymentDtoQueryServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/presentation/payment/PaymentControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/shared/TestPaymentDetailFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/shared/TestPaymentFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/shared/TestPaymentMethodDetailFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/shared/TestPointHistoryFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/shared/TestUserFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/AdjustCampaignsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/PointPaymentMethodTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/PointUnitGrantCampaignTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/PointUnitGrantCampaignTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/RateUnitGrantCampaignTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/RateUnitGrantCampaignTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/SettlementTransactionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/TestPointPaymentMethodFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/TestPointUnitGrantCampaignFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/TestPointUnitGrantCampaignFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/TestRateUnitGrantCampaignFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/TestRateUnitGrantCampaignFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/TestTransactionApplicableCampaignListFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/TestTransactionApplicableCampaignListFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/TestUsagePointFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/TransactionApplicableCampaignListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/GrantCampaignListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/UsagePointTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/settlement/SettlementTransactionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/settlement/SettlementTransactionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transaction/settlement/TestSettlementTransactionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/settlement/TestSettlementTransactionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/usecase/payment/PaymentCreateUseCaseTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V1__create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V1__create.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V2__insert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V2__insert.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/TransactionAppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/TransactionAppUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaignListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaignListRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaignListRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaignListRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/TransactionPaymentMethodRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/WithdrawalTransactionPaymentMethodRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/TransactionPaymentMethodRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/WithdrawalTransactionPaymentMethodRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/TransactionAmount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementCreateUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementCreateUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/campaign/GrantCampaignRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/campaign/GrantCampaignRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/paymentmethod/TransactionPaymentMethodRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/paymentmethod/WithdrawalTransactionPaymentMethodRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/settlement/TestSettlementTransactionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/settlement/TestSettlementTransactionFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,8 +44,8 @@
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -197,16 +103,17 @@
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.backend.transactions.paymentmethod" />
+      <recent name="com.example.backend.transactions" />
       <recent name="com.example.backend" />
       <recent name="com.example.backend.transaction" />
       <recent name="com.example.backend.domain.shared" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.backend.transactions.paymentmethod" />
+      <recent name="com.example.backend.transactions.settlement" />
       <recent name="com.example.backend.transactions.campaign" />
       <recent name="com.example.backend.shared.exception" />
       <recent name="com.example.backend.transactions" />
-      <recent name="com.example.backend.transaction" />
-      <recent name="com.example.backend.share" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.GrantCampaignRepositoryTest.findByIdで取得できる">
@@ -294,7 +201,7 @@
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.backend.transactions.settlement.*" />
+          <option name="PATTERN" value="com.example.backend.transactions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -306,7 +213,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransactionPaymentMethodRepositoryTest.findByIdで取得できる" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WithdrawalTransactionPaymentMethodRepositoryTest.findByIdで取得できる" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -315,7 +222,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.backend.transactions.paymentmethod" />
-      <option name="MAIN_CLASS_NAME" value="com.example.backend.transactions.paymentmethod.TransactionPaymentMethodRepositoryTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.backend.transactions.paymentmethod.WithdrawalTransactionPaymentMethodRepositoryTest" />
       <option name="METHOD_NAME" value="findByIdで取得できる" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -497,13 +404,13 @@
       <item itemvalue="JUnit.GrantCampaignListTest.正常にインスタンス化できる" />
       <item itemvalue="JUnit.GrantCampaignListTest.ポイント数が期待通りであること" />
       <item itemvalue="JUnit.SettlementTransactionTest.正常にインスタンス化できる" />
-      <item itemvalue="JUnit.TransactionPaymentMethodRepositoryTest.findByIdで取得できる" />
       <item itemvalue="JUnit.GrantCampaignRepositoryTest.findByIdで取得できる" />
+      <item itemvalue="JUnit.WithdrawalTransactionPaymentMethodRepositoryTest.findByIdで取得できる" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.GrantCampaignRepositoryTest.findByIdで取得できる" />
-        <item itemvalue="JUnit.TransactionPaymentMethodRepositoryTest.findByIdで取得できる" />
+        <item itemvalue="JUnit.WithdrawalTransactionPaymentMethodRepositoryTest.findByIdで取得できる" />
         <item itemvalue="JUnit.SettlementTransactionTest.正常にインスタンス化できる" />
         <item itemvalue="JUnit.GrantCampaignListTest.ポイント数が期待通りであること" />
         <item itemvalue="JUnit.GrantCampaignListTest.正常にインスタンス化できる" />
@@ -603,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656149240819</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="良いコード悪いコードで学んだことをサンプル実装">
+      <created>1656217908841</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1656217908841</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -651,11 +565,6 @@
           <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/backend/usecase/payment/PaymentCreateUseCase.java</url>
           <line>57</line>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/TransactionPaymentMethod.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

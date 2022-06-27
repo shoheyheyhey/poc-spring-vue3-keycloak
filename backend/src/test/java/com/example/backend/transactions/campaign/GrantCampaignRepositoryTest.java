@@ -3,7 +3,7 @@ package com.example.backend.transactions.campaign;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.example.backend.shared.TestSupport;
-import com.example.backend.transactions.settlement.SettlementAmount;
+import com.example.backend.transactions.TransactionAmount;
 import com.example.backend.transactions.shop.ShopId;
 import com.example.jooq.config.DataSourceConfig;
 import org.junit.jupiter.api.Test;
@@ -21,9 +21,9 @@ public class GrantCampaignRepositoryTest extends TestSupport {
 
         // when(操作)：
         ShopId shopId = new ShopId("1");
-        SettlementAmount settlementAmount = new SettlementAmount(1000);
+        TransactionAmount transactionAmount = new TransactionAmount(1000);
         GrantCampaignList grantCampaignList =
-                grantCampaignListRepository.findGrantCampaignList(settlementAmount, shopId);
+                grantCampaignListRepository.findGrantCampaignList(transactionAmount, shopId);
 
         // then(期待する結果):
         assertEquals(120, grantCampaignList.getTotalPoint().value);

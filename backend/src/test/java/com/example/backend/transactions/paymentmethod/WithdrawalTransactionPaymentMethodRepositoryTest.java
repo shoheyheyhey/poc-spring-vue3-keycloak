@@ -11,16 +11,17 @@ import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest @Import({DataSourceConfig.class}) @Transactional
-public class TransactionPaymentMethodRepositoryTest extends TestSupport {
-    @Autowired private TransactionPaymentMethodRepository transactionPaymentMethodRepository;
+public class WithdrawalTransactionPaymentMethodRepositoryTest extends TestSupport {
+    @Autowired private WithdrawalTransactionPaymentMethodRepository
+            withdrawalTransactionPaymentMethodRepository;
 
     @Test public void findByIdで取得できる() {
         // given(前提条件)：
 
         // when(操作)：
         PaymentMethodId paymentMethodId = new PaymentMethodId("1");
-        TransactionPaymentMethod transactionPaymentMethod =
-                transactionPaymentMethodRepository.findById(paymentMethodId);
+        WithdrawalTransactionPaymentMethod transactionPaymentMethod =
+                withdrawalTransactionPaymentMethodRepository.findById(paymentMethodId);
 
         // then(期待する結果):
         assertEquals("1",

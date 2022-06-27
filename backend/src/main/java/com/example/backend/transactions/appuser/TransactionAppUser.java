@@ -1,25 +1,25 @@
 package com.example.backend.transactions.appuser;
 
 import com.example.backend.shared.exception.DomainException;
-import com.example.backend.transactions.settlement.SettlementAmount;
+import com.example.backend.transactions.TransactionAmount;
 
 /** 取引アプリユーザ */
 public class TransactionAppUser {
     final AppUserId appUserId;
-    final SettlementAmount limitSettlementAmount;
+    final TransactionAmount limitTransactionAmount;
 
     public TransactionAppUser(String appUserId, int limitSettlementAmount) {
         this.appUserId = new AppUserId(appUserId);
-        this.limitSettlementAmount = new SettlementAmount(limitSettlementAmount);
+        this.limitTransactionAmount = new TransactionAmount(limitSettlementAmount);
 
     }
 
     /**
      * 決済上限額設定を上回る決済金額の場合ドメインエクセプション
-     * @param settlementAmount
+     * @param transactionAmount
      */
-    public void checkLimitSettlementAmount(SettlementAmount settlementAmount) {
-        if(this.limitSettlementAmount.value < settlementAmount.value) {
+    public void checkLimitSettlementAmount(TransactionAmount transactionAmount) {
+        if(this.limitTransactionAmount.value < transactionAmount.value) {
             throw new DomainException("決済上限額を超えています");
         }
 

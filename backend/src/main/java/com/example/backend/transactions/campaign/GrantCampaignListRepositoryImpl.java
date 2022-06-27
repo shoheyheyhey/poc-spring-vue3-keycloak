@@ -4,7 +4,7 @@ import static com.example.jooq.Tables.CAMPAIGN;
 import static com.example.jooq.Tables.CAMPAIGN_SHOP_CONDITION;
 import static com.example.jooq.Tables.CAMPAIGN_TRANSACTION_AMOUNT_CONDITION;
 
-import com.example.backend.transactions.settlement.SettlementAmount;
+import com.example.backend.transactions.TransactionAmount;
 import com.example.backend.transactions.shop.ShopId;
 import java.util.List;
 import org.jooq.DSLContext;
@@ -18,7 +18,7 @@ public class GrantCampaignListRepositoryImpl implements GrantCampaignListReposit
 
     @Autowired private DSLContext dsl;
 
-    public GrantCampaignList findGrantCampaignList(SettlementAmount settlementAmount,
+    public GrantCampaignList findGrantCampaignList(TransactionAmount transactionAmount,
             ShopId shopId) {
         GrantCampaignList grantCampaignList = new GrantCampaignList();
         List<Record2<String, Integer>> records = dsl.select(CAMPAIGN.GRANT_UNIT_TYPE,
@@ -29,9 +29,9 @@ public class GrantCampaignListRepositoryImpl implements GrantCampaignListReposit
                 .on(CAMPAIGN.CAMPAIGN_ID.eq(CAMPAIGN_TRANSACTION_AMOUNT_CONDITION.CAMPAIGN_ID))
                 .where(CAMPAIGN_SHOP_CONDITION.SHOP_ID.eq(shopId.value))
                 .and(CAMPAIGN_TRANSACTION_AMOUNT_CONDITION.MINIMUM_TRANSACTION_AMOUNT.le(
-                        settlementAmount.value))
+                        transactionAmount.value))
                 .and(CAMPAIGN_TRANSACTION_AMOUNT_CONDITION.MAXIMUM_TRANSACTION_AMOUNT.ge(
-                        settlementAmount.value)).stream().toList();
+                        transactionAmount.value)).stream().toList();
 
         if (records == null || records.size() == 0) {
             return grantCampaignList;
@@ -40,7 +40,7 @@ public class GrantCampaignListRepositoryImpl implements GrantCampaignListReposit
         for (Record2<String, Integer> record : records) {
             // TODO: 同じ変数に再代入してるが・・・どうやるのが綺麗なのかあとで調べる
             grantCampaignList = grantCampaignList.add(
-                    GrantCampaign.factoryGrantCampaign(settlementAmount.value,
+                    GrantCampaign.factoryGrantCampaign(transactionAmount.value,
                             record.get(CAMPAIGN_TRANSACTION_AMOUNT_CONDITION.GRANT_NUMBER),
                             record.get(CAMPAIGN.GRANT_UNIT_TYPE)));
         }

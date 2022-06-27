@@ -10,17 +10,18 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository @Transactional(transactionManager = "transactionManager")
-public class TransactionPaymentMethodRepositoryImpl implements TransactionPaymentMethodRepository {
+public class DepositTransactionPaymentMethodRepositoryImpl
+        implements DepositTransactionPaymentMethodRepository {
 
     @Autowired private DSLContext dsl;
 
-    public TransactionPaymentMethod findById(PaymentMethodId paymentMethodId) {
+    public DepositTransactionPaymentMethod findById(PaymentMethodId paymentMethodId) {
         PaymentMethodRecord paymentMethodRecord = dsl.selectFrom(PAYMENT_METHOD)
                 .where(PAYMENT_METHOD.PAYMENT_METHOD_ID.eq(paymentMethodId.value)).fetchOne();
         if (paymentMethodRecord == null) {
             throw new InfraException("決済手段が存在しません");
         }
-        return new TransactionPaymentMethod(paymentMethodRecord.getPaymentMethodId(),
+        return DepositTransactionPaymentMethod.factoryPaymentMethod(paymentMethodRecord.getPaymentMethodId(),
                 paymentMethodRecord.getPaymentType());
     }
 
