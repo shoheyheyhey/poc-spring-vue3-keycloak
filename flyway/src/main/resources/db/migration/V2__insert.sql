@@ -42,8 +42,13 @@ INSERT INTO sample.transactions values
   ('2022030312101020000000', 1000, '1', '2', '1')
 ;
 
--- 取引適用キャンペーン
+-- 付与キャンペーン
 INSERT INTO sample.grant_campaign values
   ('2022030312101020000000', '1', 100),
   ('2022030312101020000000', '2', 20)
+;
+
+-- 付与ポイント
+INSERT INTO sample.grant_point values
+  ('2022030312101020000000', '1', 120)
 ;

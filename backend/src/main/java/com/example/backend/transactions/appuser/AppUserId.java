@@ -2,7 +2,7 @@ package com.example.backend.transactions.appuser;
 
 /** アプリユーザID */
 public class AppUserId {
-    final String value;
+    public final String value;
 
     public AppUserId(String value) {
 

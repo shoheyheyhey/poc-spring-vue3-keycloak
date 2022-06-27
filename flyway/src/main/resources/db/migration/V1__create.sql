@@ -97,7 +97,7 @@ COMMENT ON COLUMN sample.transactions.app_user_id IS 'アプリユーザID';
 COMMENT ON COLUMN sample.transactions.payment_method_id IS '決済手段ID';
 COMMENT ON COLUMN sample.transactions.shop_id IS '店舗ID';
 
--- 取引適用キャンペーン
+-- 付与キャンペーン
 CREATE TABLE sample.grant_campaign (
   transaction_id varchar(30),
   campaign_id varchar(10) not null,
@@ -106,7 +106,21 @@ CREATE TABLE sample.grant_campaign (
   FOREIGN KEY(transaction_id) REFERENCES sample.transactions(transaction_id),
   FOREIGN KEY(campaign_id) REFERENCES sample.campaign(campaign_id)
 );
-COMMENT ON TABLE sample.grant_campaign IS '取引適用キャンペーン';
+COMMENT ON TABLE sample.grant_campaign IS '付与キャンペーン';
 COMMENT ON COLUMN sample.grant_campaign.transaction_id IS '取引ID';
 COMMENT ON COLUMN sample.grant_campaign.campaign_id IS 'キャンペーンID';
 COMMENT ON COLUMN sample.grant_campaign.grant_point IS 'ポイント';
+
+-- 付与ポイント
+CREATE TABLE sample.grant_point (
+  transaction_id varchar(30),
+  app_user_id varchar(10) not null,
+  point integer not null,
+  PRIMARY KEY(transaction_id),
+  FOREIGN KEY(transaction_id) REFERENCES sample.transactions(transaction_id),
+  FOREIGN KEY(app_user_id) REFERENCES sample.app_user(app_user_id)
+);
+COMMENT ON TABLE sample.grant_point IS '付与ポイント';
+COMMENT ON COLUMN sample.grant_point.transaction_id IS '取引ID';
+COMMENT ON COLUMN sample.grant_point.app_user_id IS 'アプリユーザID';
+COMMENT ON COLUMN sample.grant_point.point IS 'ポイント数';

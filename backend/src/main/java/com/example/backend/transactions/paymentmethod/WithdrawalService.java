@@ -1,12 +1,9 @@
 package com.example.backend.transactions.paymentmethod;
 
-import com.example.backend.transactions.paymentmethod.BankAccountWithdrawalService;
-import com.example.backend.transactions.paymentmethod.CreditCardWithdrawalService;
-import com.example.backend.transactions.paymentmethod.ElectronicMoneyWithdrawalService;
-import com.example.backend.transactions.paymentmethod.PrepaidCardWithdrawalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class WithdrawalService {
+@Service public class WithdrawalService {
 
     @Autowired BankAccountWithdrawalService bankAccountWithdrawalService;
 

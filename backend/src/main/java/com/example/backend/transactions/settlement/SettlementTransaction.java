@@ -1,10 +1,10 @@
 package com.example.backend.transactions.settlement;
 
 import com.example.backend.transactions.TransactionAmount;
+import com.example.backend.transactions.TransactionId;
 import com.example.backend.transactions.appuser.AppUserId;
 import com.example.backend.transactions.paymentmethod.PaymentMethodId;
 import com.example.backend.transactions.shop.ShopId;
-import com.example.backend.transactions.TransactionId;
 
 /**
  * 決済取引
@@ -16,8 +16,8 @@ public class SettlementTransaction {
     final ShopId shopId;
     final AppUserId appUserId;
 
-    public SettlementTransaction(TransactionAmount transactionAmount, PaymentMethodId paymentMethodId, ShopId shopId,
-            AppUserId appUserId) {
+    public SettlementTransaction(TransactionAmount transactionAmount,
+            PaymentMethodId paymentMethodId, ShopId shopId, AppUserId appUserId) {
         this.transactionAmount = transactionAmount;
         this.paymentMethodId = paymentMethodId;
         this.shopId = shopId;
