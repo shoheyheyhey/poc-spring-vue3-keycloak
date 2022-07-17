@@ -1,5 +1,6 @@
 package com.example.backend.transactions.settlement;
 
+import static com.example.jooq.Tables.GRANT_POINT;
 import static com.example.jooq.Tables.TRANSACTIONS;
 
 import org.jooq.DSLContext;
@@ -20,5 +21,10 @@ public class SettlementTransactionRepositoryImpl implements SettlementTransactio
                         settlementTransaction.transactionAmount.value,
                         settlementTransaction.paymentMethodId.value, settlementTransaction.shopId.value)
                 .execute();
+
+        dsl.insertInto(GRANT_POINT, GRANT_POINT.TRANSACTION_ID, GRANT_POINT.APP_USER_ID,
+                        GRANT_POINT.POINT)
+                .values(settlementTransaction.transactionId.value, settlementTransaction.appUserId.value,
+                        settlementTransaction.grantPoint.value).execute();
     }
 }

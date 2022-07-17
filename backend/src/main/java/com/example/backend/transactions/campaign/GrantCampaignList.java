@@ -1,7 +1,6 @@
 package com.example.backend.transactions.campaign;
 
 
-import com.example.backend.transactions.point.Point;
 import java.util.ArrayList;
 import java.util.List;
 

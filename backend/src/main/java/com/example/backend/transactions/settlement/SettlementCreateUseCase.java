@@ -10,8 +10,6 @@ import com.example.backend.transactions.paymentmethod.PaymentMethodId;
 import com.example.backend.transactions.paymentmethod.WithdrawalService;
 import com.example.backend.transactions.paymentmethod.WithdrawalTransactionPaymentMethod;
 import com.example.backend.transactions.paymentmethod.WithdrawalTransactionPaymentMethodRepository;
-import com.example.backend.transactions.point.GrantPoint;
-import com.example.backend.transactions.point.GrantPointRepository;
 import com.example.backend.transactions.shop.ShopId;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -25,7 +23,6 @@ import org.springframework.transaction.annotation.Transactional;
     private final WithdrawalTransactionPaymentMethodRepository
             withdrawalTransactionPaymentMethodRepository;
     private final SettlementTransactionRepository settlementTransactionRepository;
-    private final GrantPointRepository grantPointRepository;
 
     @Transactional public SettlementCreateDto execute(SettlementCreateParam param) {
 
@@ -38,12 +35,10 @@ import org.springframework.transaction.annotation.Transactional;
         WithdrawalTransactionPaymentMethod withdrawalTransactionPaymentMethod =
                 withdrawalTransactionPaymentMethodRepository.findById(paymentMethodId);
         TransactionAppUser transactionAppUser = transactionAppUserRepository.findById(appUserId);
-        SettlementTransaction settlementTransaction =
-                new SettlementTransaction(transactionAmount, paymentMethodId, shopId, appUserId);
         GrantCampaignList grantCampaignList =
                 grantCampaignListRepository.findGrantCampaignList(transactionAmount, shopId);
-        GrantPoint grantPoint =
-                new GrantPoint(grantCampaignList, appUserId, settlementTransaction.transactionId);
+        SettlementTransaction settlementTransaction =
+                new SettlementTransaction(transactionAmount, paymentMethodId, shopId, appUserId, grantCampaignList.getTotalPoint());
 
         // 決済金額上限チェック
         transactionAppUser.checkLimitSettlementAmount(transactionAmount);
@@ -53,7 +48,6 @@ import org.springframework.transaction.annotation.Transactional;
 
         // 決済取引情報登録
         settlementTransactionRepository.insert(settlementTransaction);
-        grantPointRepository.insert(grantPoint);
 
         return SettlementCreateDto.builder()
                 .transactionId(settlementTransaction.transactionId.value).build();

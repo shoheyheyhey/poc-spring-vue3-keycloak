@@ -1,4 +1,4 @@
-package com.example.backend.transactions.point;
+package com.example.backend.transactions.campaign;
 
 import com.example.backend.shared.exception.DomainException;
 

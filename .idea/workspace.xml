@@ -5,19 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc1109a0-5271-4593-8163-f461d9aeeb85" name="変更" comment="良いコード悪いコードで学んだことをサンプル実装">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/point/GrantPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/point/GrantPointRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/point/GrantPointRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementTransactionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementTransactionRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/settlement/SettlementControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/AppUserId.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/AppUserId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/WithdrawalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/WithdrawalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/TransactionAppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/TransactionAppUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/TransactionAppUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/TransactionAppUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/TransactionAppUserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/appuser/TransactionAppUserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaign.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaign.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaignList.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaignList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaignListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaignListRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaignListRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/GrantCampaignListRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/PointUnitGrantCampaign.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/PointUnitGrantCampaign.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/RateUnitGrantCampaign.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/RateUnitGrantCampaign.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/BankAccountPaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/paymentmethod/BankAccountPaymentMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/point/GrantPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/point/GrantPointRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/point/GrantPointRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/point/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/campaign/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementCreateUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementCreateUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V1__create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V1__create.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V2__insert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/flyway/src/main/resources/db/migration/V2__insert.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementTransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementTransactionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementTransactionRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/transactions/settlement/SettlementTransactionRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/GrantCampaignListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/campaign/GrantCampaignListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/PointUnitGrantCampaignTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/campaign/PointUnitGrantCampaignTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/RateUnitGrantCampaignTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/campaign/RateUnitGrantCampaignTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/TestPointUnitGrantCampaignFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/shared/TestPointUnitGrantCampaignFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/TestRateUnitGrantCampaignFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/shared/TestRateUnitGrantCampaignFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/TestTransactionApplicableCampaignListFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/shared/TestTransactionApplicableCampaignListFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/settlement/TestSettlementTransactionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/example/backend/transactions/settlement/TestSettlementTransactionFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +92,7 @@
     <property name="project.structure.last.edited" value="SDK" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20069505" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -89,11 +102,11 @@
       <recent name="$PROJECT_DIR$/flyway/src/main/resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.backend.transactions.campaign" />
+      <recent name="com.example.backend.shared" />
       <recent name="com.example.backend.transactions.paymentmethod" />
       <recent name="com.example.backend.transactions" />
       <recent name="com.example.backend" />
-      <recent name="com.example.backend.transaction" />
-      <recent name="com.example.backend.domain.shared" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.backend.transactions.settlement" />
@@ -103,24 +116,24 @@
       <recent name="com.example.backend.shared.exception" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SettlementControllerTest.正常系">
-    <configuration name="GrantCampaignListTest.ポイント数が期待通りであること" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GrantCampaignListTest.正常にインスタンス化できて合計ポイント数が期待通りであること">
+    <configuration name="GrantCampaignListTest.正常にインスタンス化できて合計ポイント数が期待通りであること" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.backend.transactions.paymentmethod.*" />
+          <option name="PATTERN" value="com.example.backend.transactions.campaign.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.backend.transaction" />
-      <option name="MAIN_CLASS_NAME" value="com.example.backend.transactions.GrantCampaignListTest" />
-      <option name="METHOD_NAME" value="ポイント数が期待通りであること" />
+      <option name="PACKAGE_NAME" value="com.example.backend.transactions.campaign" />
+      <option name="MAIN_CLASS_NAME" value="com.example.backend.transactions.campaign.GrantCampaignListTest" />
+      <option name="METHOD_NAME" value="正常にインスタンス化できて合計ポイント数が期待通りであること" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GrantCampaignRepositoryTest.findByIdで取得できる" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GrantCampaignRepositoryTest.取得した付与キャンペーンの合計ポイント数が期待通り" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -130,23 +143,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.backend.transactions.campaign" />
       <option name="MAIN_CLASS_NAME" value="com.example.backend.transactions.campaign.GrantCampaignRepositoryTest" />
-      <option name="METHOD_NAME" value="findByIdで取得できる" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PaymentTest.支払は支払方法詳細情報が1つもなければ作成できない" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.backend.domain.payment.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.backend.domain.payment" />
-      <option name="MAIN_CLASS_NAME" value="com.example.backend.domain.payment.PaymentTest" />
-      <option name="METHOD_NAME" value="支払は支払方法詳細情報が1つもなければ作成できない" />
+      <option name="METHOD_NAME" value="取得した付与キャンペーンの合計ポイント数が期待通り" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,49 +165,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SettlementControllerTest.正常系" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PointUnitGrantCampaignTest.正常にインスタンス化できる" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.backend.transactions.settlement.*" />
+          <option name="PATTERN" value="com.example.backend.transactions.campaign.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.backend.transactions.settlement" />
-      <option name="MAIN_CLASS_NAME" value="com.example.backend.transactions.settlement.SettlementControllerTest" />
-      <option name="METHOD_NAME" value="正常系" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SettlementTransactionTest.正常にインスタンス化できる" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.backend.transactions.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.backend.transactions.settlement" />
-      <option name="MAIN_CLASS_NAME" value="com.example.backend.transactions.settlement.SettlementTransactionTest" />
+      <option name="PACKAGE_NAME" value="com.example.backend.transactions.campaign" />
+      <option name="MAIN_CLASS_NAME" value="com.example.backend.transactions.campaign.PointUnitGrantCampaignTest" />
       <option name="METHOD_NAME" value="正常にインスタンス化できる" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WithdrawalTransactionPaymentMethodRepositoryTest.findByIdで取得できる" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PointUnitGrantCampaignTest.正常にインスタンス化できてポイント数が期待通りであること" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.backend.transactions.paymentmethod.*" />
+          <option name="PATTERN" value="com.example.backend.transactions.campaign.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.backend.transactions.paymentmethod" />
-      <option name="MAIN_CLASS_NAME" value="com.example.backend.transactions.paymentmethod.WithdrawalTransactionPaymentMethodRepositoryTest" />
-      <option name="METHOD_NAME" value="findByIdで取得できる" />
+      <option name="PACKAGE_NAME" value="com.example.backend.transactions.campaign" />
+      <option name="MAIN_CLASS_NAME" value="com.example.backend.transactions.campaign.PointUnitGrantCampaignTest" />
+      <option name="METHOD_NAME" value="正常にインスタンス化できてポイント数が期待通りであること" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RateUnitGrantCampaignTest.正常にインスタンス化できてポイント数が期待通りであること" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.backend.transactions.campaign.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.backend.transactions.campaign" />
+      <option name="MAIN_CLASS_NAME" value="com.example.backend.transactions.campaign.RateUnitGrantCampaignTest" />
+      <option name="METHOD_NAME" value="正常にインスタンス化できてポイント数が期待通りであること" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -388,19 +385,19 @@
       <item itemvalue="Maven.backend [clean, install]" />
       <item itemvalue="Maven.backend [spring-boot:run]" />
       <item itemvalue="Maven.flyway [clean, install]" />
-      <item itemvalue="JUnit.GrantCampaignListTest.ポイント数が期待通りであること" />
-      <item itemvalue="JUnit.SettlementTransactionTest.正常にインスタンス化できる" />
-      <item itemvalue="JUnit.GrantCampaignRepositoryTest.findByIdで取得できる" />
-      <item itemvalue="JUnit.WithdrawalTransactionPaymentMethodRepositoryTest.findByIdで取得できる" />
-      <item itemvalue="JUnit.SettlementControllerTest.正常系" />
+      <item itemvalue="JUnit.PointUnitGrantCampaignTest.正常にインスタンス化できる" />
+      <item itemvalue="JUnit.PointUnitGrantCampaignTest.正常にインスタンス化できてポイント数が期待通りであること" />
+      <item itemvalue="JUnit.GrantCampaignRepositoryTest.取得した付与キャンペーンの合計ポイント数が期待通り" />
+      <item itemvalue="JUnit.RateUnitGrantCampaignTest.正常にインスタンス化できてポイント数が期待通りであること" />
+      <item itemvalue="JUnit.GrantCampaignListTest.正常にインスタンス化できて合計ポイント数が期待通りであること" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SettlementControllerTest.正常系" />
-        <item itemvalue="JUnit.GrantCampaignRepositoryTest.findByIdで取得できる" />
-        <item itemvalue="JUnit.WithdrawalTransactionPaymentMethodRepositoryTest.findByIdで取得できる" />
-        <item itemvalue="JUnit.SettlementTransactionTest.正常にインスタンス化できる" />
-        <item itemvalue="JUnit.GrantCampaignListTest.ポイント数が期待通りであること" />
+        <item itemvalue="JUnit.GrantCampaignListTest.正常にインスタンス化できて合計ポイント数が期待通りであること" />
+        <item itemvalue="JUnit.RateUnitGrantCampaignTest.正常にインスタンス化できてポイント数が期待通りであること" />
+        <item itemvalue="JUnit.GrantCampaignRepositoryTest.取得した付与キャンペーンの合計ポイント数が期待通り" />
+        <item itemvalue="JUnit.PointUnitGrantCampaignTest.正常にインスタンス化できてポイント数が期待通りであること" />
+        <item itemvalue="JUnit.PointUnitGrantCampaignTest.正常にインスタンス化できる" />
       </list>
     </recent_temporary>
   </component>
@@ -511,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656306627100</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="良いコード悪いコードで学んだことをサンプル実装">
+      <created>1656371498795</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1656371498795</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -562,5 +566,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

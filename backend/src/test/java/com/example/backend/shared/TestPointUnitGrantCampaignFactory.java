@@ -1,4 +1,4 @@
-package com.example.backend.transactions;
+package com.example.backend.shared;
 
 import com.example.backend.transactions.campaign.GrantCampaign;
 import com.example.backend.transactions.campaign.GrantUnitType;

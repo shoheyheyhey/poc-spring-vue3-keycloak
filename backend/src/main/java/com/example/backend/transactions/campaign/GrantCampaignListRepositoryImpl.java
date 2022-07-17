@@ -11,13 +11,13 @@ import org.jooq.DSLContext;
 import org.jooq.Record2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
-@Repository @Transactional(transactionManager = "transactionManager")
+@Repository
 public class GrantCampaignListRepositoryImpl implements GrantCampaignListRepository {
 
     @Autowired private DSLContext dsl;
 
+    /** {@inheritDoc} */
     public GrantCampaignList findGrantCampaignList(TransactionAmount transactionAmount,
             ShopId shopId) {
         GrantCampaignList grantCampaignList = new GrantCampaignList();
@@ -38,7 +38,6 @@ public class GrantCampaignListRepositoryImpl implements GrantCampaignListReposit
         }
 
         for (Record2<String, Integer> record : records) {
-            // TODO: 同じ変数に再代入してるが・・・どうやるのが綺麗なのかあとで調べる
             grantCampaignList = grantCampaignList.add(
                     GrantCampaign.factoryGrantCampaign(transactionAmount.value,
                             record.get(CAMPAIGN_TRANSACTION_AMOUNT_CONDITION.GRANT_NUMBER),

@@ -19,6 +19,4 @@ public class BankAccountPaymentMethod implements WithdrawalTransactionPaymentMet
         withdrawalService.bankAccountWithdrawalService.execute(this);
     }
 
-
-
 }

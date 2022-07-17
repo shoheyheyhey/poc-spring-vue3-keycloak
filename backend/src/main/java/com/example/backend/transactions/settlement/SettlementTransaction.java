@@ -4,6 +4,7 @@ import com.example.backend.transactions.TransactionAmount;
 import com.example.backend.transactions.TransactionId;
 import com.example.backend.transactions.appuser.AppUserId;
 import com.example.backend.transactions.paymentmethod.PaymentMethodId;
+import com.example.backend.transactions.campaign.Point;
 import com.example.backend.transactions.shop.ShopId;
 
 /**
@@ -15,13 +16,15 @@ public class SettlementTransaction {
     final PaymentMethodId paymentMethodId;
     final ShopId shopId;
     final AppUserId appUserId;
+    final Point grantPoint;
 
     public SettlementTransaction(TransactionAmount transactionAmount,
-            PaymentMethodId paymentMethodId, ShopId shopId, AppUserId appUserId) {
+            PaymentMethodId paymentMethodId, ShopId shopId, AppUserId appUserId, Point grantPoint) {
         this.transactionAmount = transactionAmount;
         this.paymentMethodId = paymentMethodId;
         this.shopId = shopId;
         this.appUserId = appUserId;
+        this.grantPoint = grantPoint;
     }
 
 

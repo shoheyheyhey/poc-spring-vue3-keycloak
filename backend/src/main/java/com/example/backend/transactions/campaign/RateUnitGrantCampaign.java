@@ -1,8 +1,6 @@
 package com.example.backend.transactions.campaign;
 
 
-import com.example.backend.transactions.point.Point;
-
 /**
  * 率単位付与キャンペーン
  */
@@ -16,6 +14,7 @@ public class RateUnitGrantCampaign implements GrantCampaign {
         this.grantRate = grantRate;
     }
 
+    /** {@inheritDoc} */
     @Override public Point getPoint() {
         return new Point((int) Math.floor(this.transactionAmount * 0.01 * grantRate));
     }

@@ -7,9 +7,8 @@ import com.example.jooq.tables.records.AppUserRecord;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
-@Repository @Transactional(transactionManager = "transactionManager")
+@Repository
 public class TransactionAppUserRepositoryImpl implements TransactionAppUserRepository {
 
     @Autowired private DSLContext dsl;
