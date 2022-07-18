@@ -1,9 +1,10 @@
-package com.example.backend.transactions.settlement;
+package com.example.backend.shared;
 
 import com.example.backend.transactions.TransactionAmount;
 import com.example.backend.transactions.appuser.AppUserId;
 import com.example.backend.transactions.paymentmethod.PaymentMethodId;
 import com.example.backend.transactions.campaign.Point;
+import com.example.backend.transactions.settlement.SettlementTransaction;
 import com.example.backend.transactions.shop.ShopId;
 
 public class TestSettlementTransactionFactory {

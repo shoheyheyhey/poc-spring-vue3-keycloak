@@ -15,7 +15,8 @@ public class TransactionAppUser {
     }
 
     /**
-     * 決済上限額設定を上回る決済金額の場合ドメインエクセプション
+     * 【決済上限額チェック】<br>
+     * 決済上限額設定を上回る取引金額の場合ドメインエクセプション
      * @param transactionAmount 取引金額
      */
     public void checkLimitSettlementAmount(TransactionAmount transactionAmount) {

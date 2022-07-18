@@ -2,6 +2,7 @@ package com.example.backend.transactions.settlement;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.example.backend.shared.TestSettlementTransactionFactory;
 import com.example.backend.shared.TestSupport;
 import org.junit.jupiter.api.Test;
 
